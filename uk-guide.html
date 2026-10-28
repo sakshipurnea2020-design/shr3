@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complete Guide to UK Universities — Shreya Namankan</title>
+<meta name="description" content="A complete guide to choosing the right university in the UK for Indian students — academic requirements, costs, scholarships, visas, and top universities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#241819;--cream:#faf7f2;--gold:#e0b034;--gold-lt:#f0cc6a;--sky:#581825;--dark:#2a1015;--dark2:#1e0d10;--white:#fff;--gray:#6b5c5e;--gray-lt:#f5f0eb;--r:12px;--sh:0 4px 24px rgba(36,24,25,.12);--sh2:0 8px 48px rgba(36,24,25,.18);--tr:.25s ease;--fb:'Inter',sans-serif;--fh:'Playfair Display',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+#spb{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:9999;width:0%;transition:width .1s linear;pointer-events:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(36,24,25,.96);backdrop-filter:blur(12px);padding:0 clamp(1rem,4vw,2rem)}
+.nav-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--fh);font-size:1.3rem;font-weight:700;color:#fff}.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:.75rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.7);font-size:.85rem;transition:color var(--tr)}.nav-links a:hover{color:var(--gold)}
+.c{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--sky),var(--dark2));padding:9rem 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://picsum.photos/seed/london/1400/500') center/cover no-repeat;opacity:.18;z-index:0}
+.hero-content{position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(224,176,52,.15);border:1px solid rgba(224,176,52,.35);color:var(--gold-lt);font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.35rem .9rem;border-radius:50px;margin-bottom:1rem}
+.hero h1{color:#fff;font-size:clamp(1.8rem,4.5vw,3rem);margin-bottom:.75rem;line-height:1.15}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-pills{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}
+.hero-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-size:.8rem;font-weight:600;padding:.35rem .85rem;border-radius:50px}
+
+/* TOC */
+.toc-section{background:var(--white);padding:2.5rem 0;border-bottom:1px solid var(--gray-lt)}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.65rem}
+.toc-item{display:flex;align-items:center;gap:.6rem;padding:.55rem .9rem;background:var(--cream);border-radius:8px;font-size:.85rem;font-weight:600;color:var(--sky);transition:var(--tr);border:1px solid transparent}
+.toc-item:hover{background:rgba(88,24,37,.07);border-color:rgba(88,24,37,.15)}
+.toc-num{background:var(--gold);color:var(--ink);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0}
+
+/* MAIN CONTENT */
+.guide-section{padding:clamp(2.5rem,5vw,4rem) 0}
+.guide-section:nth-child(even){background:var(--white)}
+.section-num{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,24,37,.08);color:var(--sky);font-size:.78rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:.28rem .85rem;border-radius:50px;margin-bottom:.75rem}
+.guide-section h2{font-family:var(--fh);font-size:clamp(1.4rem,3vw,1.9rem);color:var(--sky);margin-bottom:1rem}
+.guide-section h3{font-family:var(--fh);font-size:1.1rem;color:var(--ink);margin:1.5rem 0 .5rem}
+.guide-section p{color:var(--gray);font-size:.95rem;line-height:1.8;margin-bottom:1rem}
+.guide-section ul{color:var(--gray);font-size:.93rem;line-height:1.8;padding-left:1.5rem;margin-bottom:1rem}
+.guide-section ul li{margin-bottom:.35rem}
+
+/* TABLE */
+.guide-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+.guide-table th{background:linear-gradient(135deg,var(--sky),var(--dark2));color:#fff;padding:.85rem 1.1rem;text-align:left;font-size:.82rem;font-weight:700;letter-spacing:.3px}
+.guide-table td{padding:.8rem 1.1rem;font-size:.88rem;color:var(--gray);border-bottom:1px solid rgba(36,24,25,.06)}
+.guide-table tr:last-child td{border-bottom:none}
+.guide-table tr:hover td{background:rgba(224,176,52,.04)}
+
+/* INFO BOXES */
+.info-box{background:rgba(224,176,52,.08);border:1px solid rgba(224,176,52,.25);border-left:4px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:1.1rem 1.4rem;margin:1.5rem 0;color:var(--gray);font-size:.88rem;line-height:1.7}
+.info-box strong{color:var(--sky)}
+.checklist-item{display:flex;align-items:flex-start;gap:.65rem;padding:.55rem 0;font-size:.92rem;color:var(--gray)}
+.checklist-item::before{content:'✦';color:var(--gold);flex-shrink:0;font-size:.7rem;margin-top:.25rem}
+
+/* FRAMEWORK */
+.framework-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:1.5rem 0}
+.framework-card{background:var(--white);border-radius:var(--r);padding:1.25rem;box-shadow:var(--sh);border-top:3px solid var(--gold)}
+.framework-card .fnum{font-family:var(--fh);font-size:1.5rem;font-weight:800;color:var(--gold);line-height:1}
+.framework-card h4{color:var(--sky);font-family:var(--fb);font-weight:700;font-size:.88rem;margin:.35rem 0 .3rem}
+.framework-card p{color:var(--gray);font-size:.82rem;line-height:1.6;margin:0}
+
+/* ── TOP UNIVERSITIES ── */
+.uni-hero{background:linear-gradient(135deg,var(--sky),var(--dark2));padding:3.5rem 2rem;text-align:center}
+.uni-hero h2{color:#fff;font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:.5rem}
+.uni-hero p{color:rgba(255,255,255,.72);max-width:580px;margin:0 auto;font-size:.95rem}
+.uni-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;padding:clamp(2.5rem,5vw,4rem) 0}
+.uni-card{background:var(--white);border-radius:var(--r);padding:1.5rem;box-shadow:var(--sh);border-left:4px solid var(--gold);transition:var(--tr);position:relative;overflow:hidden}
+.uni-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--sky));transform:scaleX(0);transition:transform .3s ease;transform-origin:left}
+.uni-card:hover::before{transform:scaleX(1)}
+.uni-card:hover{transform:translateY(-4px);box-shadow:var(--sh2)}
+.uni-rank{font-size:.72rem;font-weight:800;color:var(--gold);letter-spacing:.5px;text-transform:uppercase;margin-bottom:.4rem}
+.uni-name{font-family:var(--fh);font-size:1.05rem;color:var(--sky);margin-bottom:.3rem}
+.uni-city{font-size:.78rem;color:var(--gray);margin-bottom:.75rem;display:flex;align-items:center;gap:.3rem}
+.uni-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.uni-tag{background:rgba(88,24,37,.07);color:var(--sky);font-size:.72rem;font-weight:600;padding:.18rem .55rem;border-radius:50px}
+
+/* CTA */
+.guide-cta{background:linear-gradient(135deg,var(--sky),var(--dark2));padding:clamp(3rem,6vw,5rem) 2rem;text-align:center}
+.guide-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem}
+.guide-cta p{color:rgba(255,255,255,.72);max-width:560px;margin:0 auto 2rem;font-size:.95rem}
+.btng{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);padding:.8rem 1.75rem;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--tr)}.btng:hover{background:var(--gold-lt);transform:translateY(-2px)}
+.btnw{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:.8rem 1.75rem;border-radius:50px;font-weight:600;font-size:.9rem;transition:var(--tr);margin-left:.75rem}.btnw:hover{background:rgba(255,255,255,.2)}
+footer{background:var(--dark2);padding:1.4rem 0;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem}
+footer a{color:var(--gold)}
+.wa{position:fixed;bottom:28px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:transform var(--tr)}.wa:hover{transform:scale(1.1)}
+@media(max-width:600px){.uni-grid{grid-template-columns:1fr}.toc-grid{grid-template-columns:1fr 1fr}.framework-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">Shreya Namankan <span>✦</span></a>
+    <div class="nav-links">
+      <a href="universities-country.html?country=uk">← UK Universities</a>
+      <a href="inquiry.html" style="background:var(--gold);color:var(--ink);padding:.4rem 1rem;border-radius:50px;font-weight:600">Free Counselling</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="badge">🇬🇧 United Kingdom Guide</div>
+    <h1>A Complete Guide to Choosing the<br><em>Right University in the UK</em></h1>
+    <div class="hero-pills">
+      <span class="hero-pill">11 Key Topics</span>
+      <span class="hero-pill">Academic Requirements</span>
+      <span class="hero-pill">Living Costs</span>
+      <span class="hero-pill">Scholarships</span>
+      <span class="hero-pill">Visa Guidance</span>
+      <span class="hero-pill">Top 20 Universities</span>
+    </div>
+  </div>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<section class="toc-section">
+  <div class="c">
+    <p style="color:var(--gray);font-size:.85rem;margin-bottom:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px">Contents</p>
+    <div class="toc-grid">
+      <a href="#s1" class="toc-item"><span class="toc-num">1</span>Understanding the UK System</a>
+      <a href="#s2" class="toc-item"><span class="toc-num">2</span>Academic Requirements</a>
+      <a href="#s3" class="toc-item"><span class="toc-num">3</span>University Reputation</a>
+      <a href="#s4" class="toc-item"><span class="toc-num">4</span>Rankings & Accreditation</a>
+      <a href="#s5" class="toc-item"><span class="toc-num">5</span>Fees, Costs & Scholarships</a>
+      <a href="#s6" class="toc-item"><span class="toc-num">6</span>Career Goals</a>
+      <a href="#s7" class="toc-item"><span class="toc-num">7</span>Master's Degree Structure</a>
+      <a href="#s8" class="toc-item"><span class="toc-num">8</span>Student Visas</a>
+      <a href="#s9" class="toc-item"><span class="toc-num">9</span>When to Apply</a>
+      <a href="#s10" class="toc-item"><span class="toc-num">10</span>Choosing a City</a>
+      <a href="#s11" class="toc-item"><span class="toc-num">11</span>Shortlist Framework</a>
+      <a href="#unis" class="toc-item"><span class="toc-num">★</span>Top 20 UK Universities</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 1 -->
+<section class="guide-section" id="s1">
+  <div class="c">
+    <div class="section-num">Section 1</div>
+    <h2>Understanding the UK University System</h2>
+    <p>Choosing a university in the United Kingdom requires more than looking at its position in a global ranking. Students should consider academic reputation, course content, entry requirements, tuition fees, career opportunities, and the suitability of the institution for their long-term goals.</p>
+    <p>Unlike India, where competitive examinations and entrance ranks play a major role in university admissions, UK postgraduate applications are generally assessed by individual universities. Each institution establishes its own academic requirements, application deadlines, selection criteria, and funding arrangements. For Indian students, understanding these differences is essential to developing a realistic university shortlist.</p>
+    <h3>Russell Group and Other Universities</h3>
+    <p>The Russell Group comprises 24 UK universities known for their research activity and academic contributions. Institutions such as Oxford, Cambridge, Imperial College London, University College London, Edinburgh, and Manchester belong to this group. However, Russell Group membership should not be treated as the only indicator of educational quality.</p>
+    <p>Universities outside the group, including Bath, Surrey, and Loughborough, have established reputations in particular disciplines and may offer strong industry connections and graduate employment opportunities. The most suitable institution depends on the subject being studied and the student's priorities.</p>
+    <div class="info-box"><strong>Key insight:</strong> A university with a particularly strong department in a chosen field may be a better option than a more highly ranked institution with a less suitable course.</div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="guide-section" id="s2">
+  <div class="c">
+    <div class="section-num">Section 2</div>
+    <h2>Academic Requirements for Indian Students</h2>
+    <p>UK universities normally evaluate an applicant's previous qualifications, academic performance, subject background, English-language proficiency, and suitability for the intended programme.</p>
+    <table class="guide-table">
+      <thead><tr><th>University Category</th><th>Typical Academic Expectation</th><th>Indicative Indian %</th></tr></thead>
+      <tbody>
+        <tr><td>Highly competitive universities</td><td>First-class or strong upper second-class equivalent</td><td>Often around 65–75%+</td></tr>
+        <tr><td>Competitive research-intensive</td><td>Upper second-class equivalent (2:1)</td><td>Often around 60–70%+</td></tr>
+        <tr><td>Other established universities</td><td>Upper second-class or selected lower second-class</td><td>May begin around 55–60%</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box"><strong>Important:</strong> These figures are indicative, not universal admission rules. Applicants should check the entry requirements published for their country and qualification on the university's official website. English-language requirements (IELTS, TOEFL, or another accepted qualification) must also be checked for the specific course.</div>
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="guide-section" id="s3">
+  <div class="c">
+    <div class="section-num">Section 3</div>
+    <h2>How Much Does University Reputation Matter?</h2>
+    <p>University reputation can influence graduate recruitment, particularly in sectors such as finance, consulting, technology, and professional services. Well-known institutions may attract larger employer networks and provide access to specialist careers events.</p>
+    <p>Nevertheless, a university's name alone does not determine career success. Employers also assess technical knowledge, practical experience, communication skills, internships, academic projects, and performance during interviews.</p>
+    <p>Before selecting a university, students should investigate:</p>
+    <div class="checklist-item">The reputation of the specific academic department</div>
+    <div class="checklist-item">The relevance of the curriculum to their intended profession</div>
+    <div class="checklist-item">Internship opportunities and employer partnerships</div>
+    <div class="checklist-item">Graduate employment information for the particular programme</div>
+    <div class="checklist-item">Careers support, alumni networks, and professional connections</div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="guide-section" id="s4">
+  <div class="c">
+    <div class="section-num">Section 4</div>
+    <h2>Rankings, Accreditation, and Course Quality</h2>
+    <p>University rankings can help students identify potential institutions, but they should be used as a starting point rather than the final basis for a decision. The QS World University Rankings and Times Higher Education World University Rankings assess institutions using different indicators.</p>
+    <table class="guide-table">
+      <thead><tr><th>Field</th><th>What to Investigate</th></tr></thead>
+      <tbody>
+        <tr><td>Business and management</td><td>AACSB, AMBA, and EQUIS accreditation where relevant</td></tr>
+        <tr><td>Engineering</td><td>Accreditation through the Engineering Council and the relevant professional institution</td></tr>
+        <tr><td>Cybersecurity</td><td>Certification status on the NCSC's recognised degrees list</td></tr>
+        <tr><td>Nursing</td><td>Nursing and Midwifery Council requirements and registration implications</td></tr>
+        <tr><td>Law</td><td>Solicitors Qualifying Examination route for England and Wales</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 5 -->
+<section class="guide-section" id="s5">
+  <div class="c">
+    <div class="section-num">Section 5</div>
+    <h2>Tuition Fees, Living Costs, and Scholarships</h2>
+    <p>The total cost of studying in the UK includes tuition fees, accommodation, food, transport, course materials, visa-related expenses, and other personal costs.</p>
+    <table class="guide-table">
+      <thead><tr><th>Location</th><th>Indicative Monthly Budget</th></tr></thead>
+      <tbody>
+        <tr><td>London</td><td>£1,400 to £2,400</td></tr>
+        <tr><td>Manchester or Birmingham</td><td>£930 to £1,620</td></tr>
+        <tr><td>Edinburgh, Leeds, or Sheffield</td><td>£900 to £1,550</td></tr>
+        <tr><td>Bristol or Bath</td><td>£1,000 to £1,700</td></tr>
+      </tbody>
+    </table>
+    <div class="info-box">These are approximate estimates. Students should prepare a budget using current accommodation prices and the university's own cost-of-living guidance.</div>
+    <h3>Scholarships and Financial Support</h3>
+    <p>Many UK universities offer scholarships for international students based on academic merit, financial circumstances, nationality, or subject area. Scholarship deadlines may fall earlier than course application deadlines — funding research should begin alongside university selection.</p>
+    <div class="checklist-item">Whether the award is open to Indian applicants</div>
+    <div class="checklist-item">Whether it applies to taught master's or research degrees</div>
+    <div class="checklist-item">Value and whether it covers tuition or living expenses</div>
+    <div class="checklist-item">Application deadline and any separate application requirements</div>
+    <div class="checklist-item">Whether the award can be combined with other funding</div>
+  </div>
+</section>
+
+<!-- SECTION 6 -->
+<section class="guide-section" id="s6">
+  <div class="c">
+    <div class="section-num">Section 6</div>
+    <h2>Choosing a University According to Your Career Goals</h2>
+    <p>The best university for one student may not be the best choice for another. The decision should reflect intended profession, academic interests, financial position, and preferred working environment.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin-top:1.5rem">
+      <div class="framework-card"><div class="fnum">💻</div><h4>CS & Data Science</h4><p>Examine module content, research specialisations, computing facilities, industry projects, and connections with technology employers.</p></div>
+      <div class="framework-card"><div class="fnum">💼</div><h4>Business & Management</h4><p>Consider course specialisation, employer engagement, professional accreditation, internships, and strength of careers service.</p></div>
+      <div class="framework-card"><div class="fnum">⚙️</div><h4>Engineering</h4><p>Examine laboratory facilities, industrial projects, research expertise, and professional accreditation through the Engineering Council.</p></div>
+      <div class="framework-card"><div class="fnum">🔐</div><h4>Cybersecurity</h4><p>Investigate NCSC certified degrees, specialist laboratories, network security, digital forensics, and cloud security opportunities.</p></div>
+      <div class="framework-card"><div class="fnum">🏥</div><h4>Healthcare & Nursing</h4><p>Establish whether the goal is academic study or professional registration. Review NMC requirements before choosing a course.</p></div>
+      <div class="framework-card"><div class="fnum">⚖️</div><h4>Law</h4><p>Identify intended legal career and jurisdiction. Research Solicitors Qualifying Examination route for England and Wales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7 -->
+<section class="guide-section" id="s7">
+  <div class="c">
+    <div class="section-num">Section 7</div>
+    <h2>Why the Structure of a Master's Degree Matters</h2>
+    <p>Many UK taught master's programmes can be completed in one year, reducing time and living expenses. However, a shorter degree also requires careful planning.</p>
+    <div class="checklist-item"><strong>Course intensity:</strong> A one-year programme may involve concentrated teaching periods and a relatively short dissertation period.</div>
+    <div class="checklist-item"><strong>Career preparation:</strong> Job applications, networking, and interview preparation should begin early.</div>
+    <div class="checklist-item"><strong>Work experience:</strong> Investigate whether internships, placements, or industry projects are formally included. A placement year is not standard in every master's degree.</div>
+    <div class="checklist-item"><strong>Professional development:</strong> Balance academic commitments with career planning and development of practical skills.</div>
+    <div class="checklist-item"><strong>Long-term value:</strong> A shorter programme's value depends on education quality, relevant experience, and employment opportunities.</div>
+  </div>
+</section>
+
+<!-- SECTION 8 -->
+<section class="guide-section" id="s8">
+  <div class="c">
+    <div class="section-num">Section 8</div>
+    <h2>Student Visas and University Sponsorship</h2>
+    <p>International students applying for a UK Student visa generally need a Confirmation of Acceptance for Studies (CAS) issued by an appropriately licensed student sponsor, alongside meeting the other applicable immigration requirements.</p>
+    <div class="info-box"><strong>Before committing:</strong> Verify that the institution appears on the official GOV.UK Register of Student Sponsors. Check the university's CAS procedures, deadlines, financial evidence requirements, and any additional pre-CAS checks.</div>
+    <p>A university's reputation or ranking does not guarantee visa approval. Students considering employment after graduation should also review the current Graduate visa and Skilled Worker visa requirements — eligibility and requirements can change, so official government guidance should be consulted.</p>
+  </div>
+</section>
+
+<!-- SECTION 9 -->
+<section class="guide-section" id="s9">
+  <div class="c">
+    <div class="section-num">Section 9</div>
+    <h2>When Should You Apply?</h2>
+    <p>For a September intake, many universities begin accepting applications during the preceding autumn. A practical application schedule:</p>
+    <table class="guide-table">
+      <thead><tr><th>Period</th><th>Recommended Action</th></tr></thead>
+      <tbody>
+        <tr><td>September – November</td><td>Research universities, compare courses, prepare academic documents, investigate scholarships</td></tr>
+        <tr><td>November – January</td><td>Submit applications to competitive programmes and those with early deadlines</td></tr>
+        <tr><td>February – April</td><td>Review offers, complete outstanding requirements, compare funding packages</td></tr>
+        <tr><td>May – July</td><td>Finalise decisions, prepare financial documentation, complete CAS-related steps</td></tr>
+        <tr><td>Before enrolment</td><td>Meet visa requirements, arrange accommodation, and prepare for travel</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 10 -->
+<section class="guide-section" id="s10">
+  <div class="c">
+    <div class="section-num">Section 10</div>
+    <h2>Selecting the Right City</h2>
+    <p>The location of a university affects living costs, transport, access to employers, and the overall student experience.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.25rem">
+      <div class="framework-card"><div class="fnum">🏙️</div><h4>London</h4><p>Major financial, consulting and tech employers. Higher accommodation costs.</p></div>
+      <div class="framework-card"><div class="fnum">🏭</div><h4>Manchester & Birmingham</h4><p>Established employment markets. More affordable than London.</p></div>
+      <div class="framework-card"><div class="fnum">🏰</div><h4>Edinburgh</h4><p>Strong finance and technology presence. Notable student culture.</p></div>
+      <div class="framework-card"><div class="fnum">🌿</div><h4>Leeds, Sheffield, Bristol, Bath</h4><p>Different combinations of academic specialisation, local employers, and communities.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 11 -->
+<section class="guide-section" id="s11">
+  <div class="c">
+    <div class="section-num">Section 11</div>
+    <h2>A Practical Framework for Building a University Shortlist</h2>
+    <p>Rather than selecting universities exclusively by overall rankings, applicants should assess each option against a consistent set of criteria:</p>
+    <div class="framework-grid">
+      <div class="framework-card"><div class="fnum">1</div><h4>Academic Suitability</h4><p>Does the course match your qualifications, interests, and future plans?</p></div>
+      <div class="framework-card"><div class="fnum">2</div><h4>Admission Requirements</h4><p>Are your grades, subject background, and English qualifications sufficient?</p></div>
+      <div class="framework-card"><div class="fnum">3</div><h4>Course Quality</h4><p>Are the modules, teaching methods, and professional accreditation appropriate?</p></div>
+      <div class="framework-card"><div class="fnum">4</div><h4>Financial Feasibility</h4><p>Can you afford tuition fees and living expenses without relying on uncertain funding?</p></div>
+      <div class="framework-card"><div class="fnum">5</div><h4>Career Opportunities</h4><p>Does the programme offer relevant industry links, practical experience, and career support?</p></div>
+      <div class="framework-card"><div class="fnum">6</div><h4>Location</h4><p>Does the city suit your budget and intended employment sector?</p></div>
+      <div class="framework-card"><div class="fnum">7</div><h4>Immigration</h4><p>Have you checked the sponsor register and current UK study and work requirements?</p></div>
+      <div class="framework-card"><div class="fnum">8</div><h4>Application Timing</h4><p>Can you meet the course and scholarship deadlines?</p></div>
+    </div>
+    <div class="info-box" style="margin-top:1.5rem"><strong>Conclusion:</strong> The strongest university choice is not necessarily the institution with the highest overall ranking. It is the institution that offers the most suitable combination of academic preparation, financial feasibility, and opportunities for the student's intended future.</div>
+  </div>
+</section>
+
+<!-- TOP UNIVERSITIES SECTION -->
+<div id="unis">
+  <section class="uni-hero">
+    <h2>🇬🇧 Top 20 UK Universities</h2>
+    <p>Explore the UK's most prestigious institutions for Indian students — from Oxford and Cambridge to Bath and St Andrews.</p>
+  </section>
+  <section style="background:var(--cream);padding:0 0 clamp(3rem,6vw,5rem)">
+    <div class="c">
+      <div class="uni-grid">
+        <div class="uni-card"><div class="uni-rank">#1 — Russell Group</div><div class="uni-name">University of Oxford</div><div class="uni-city">📍 Oxford, England</div><div class="uni-tags"><span class="uni-tag">Highly Competitive</span><span class="uni-tag">Research-Intensive</span><span class="uni-tag">Global Top 5</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#2 — Russell Group</div><div class="uni-name">University of Cambridge</div><div class="uni-city">📍 Cambridge, England</div><div class="uni-tags"><span class="uni-tag">Highly Competitive</span><span class="uni-tag">Research-Intensive</span><span class="uni-tag">Global Top 5</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#3 — Russell Group</div><div class="uni-name">Imperial College London</div><div class="uni-city">📍 London, England</div><div class="uni-tags"><span class="uni-tag">STEM Specialist</span><span class="uni-tag">Engineering</span><span class="uni-tag">Medicine</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#4 — Russell Group</div><div class="uni-name">UCL (University College London)</div><div class="uni-city">📍 London, England</div><div class="uni-tags"><span class="uni-tag">Research-Intensive</span><span class="uni-tag">Multidisciplinary</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#5 — Russell Group</div><div class="uni-name">University of Edinburgh</div><div class="uni-city">📍 Edinburgh, Scotland</div><div class="uni-tags"><span class="uni-tag">Research-Intensive</span><span class="uni-tag">Finance &amp; Tech</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#6 — Russell Group</div><div class="uni-name">King's College London</div><div class="uni-city">📍 London, England</div><div class="uni-tags"><span class="uni-tag">Law &amp; Medicine</span><span class="uni-tag">Social Sciences</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#7 — Russell Group</div><div class="uni-name">London School of Economics and Political Science</div><div class="uni-city">📍 London, England</div><div class="uni-tags"><span class="uni-tag">Economics</span><span class="uni-tag">Finance</span><span class="uni-tag">Law</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#8 — Russell Group</div><div class="uni-name">University of Manchester</div><div class="uni-city">📍 Manchester, England</div><div class="uni-tags"><span class="uni-tag">Business</span><span class="uni-tag">Engineering</span><span class="uni-tag">CS</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#9 — Russell Group</div><div class="uni-name">University of Bristol</div><div class="uni-city">📍 Bristol, England</div><div class="uni-tags"><span class="uni-tag">Engineering</span><span class="uni-tag">Law</span><span class="uni-tag">Sciences</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#10 — Russell Group</div><div class="uni-name">University of Warwick</div><div class="uni-city">📍 Coventry, England</div><div class="uni-tags"><span class="uni-tag">Business</span><span class="uni-tag">Economics</span><span class="uni-tag">CS</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#11 — Russell Group</div><div class="uni-name">University of Glasgow</div><div class="uni-city">📍 Glasgow, Scotland</div><div class="uni-tags"><span class="uni-tag">Medicine</span><span class="uni-tag">Engineering</span><span class="uni-tag">Law</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#12 — Russell Group</div><div class="uni-name">University of Birmingham</div><div class="uni-city">📍 Birmingham, England</div><div class="uni-tags"><span class="uni-tag">Business</span><span class="uni-tag">Engineering</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#13 — Russell Group</div><div class="uni-name">University of Southampton</div><div class="uni-city">📍 Southampton, England</div><div class="uni-tags"><span class="uni-tag">Engineering</span><span class="uni-tag">Oceanography</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#14 — Russell Group</div><div class="uni-name">University of Leeds</div><div class="uni-city">📍 Leeds, England</div><div class="uni-tags"><span class="uni-tag">Business</span><span class="uni-tag">Fashion</span><span class="uni-tag">Engineering</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#15 — Russell Group</div><div class="uni-name">University of Nottingham</div><div class="uni-city">📍 Nottingham, England</div><div class="uni-tags"><span class="uni-tag">Pharmacy</span><span class="uni-tag">Business</span><span class="uni-tag">Engineering</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#16 — Russell Group</div><div class="uni-name">University of Sheffield</div><div class="uni-city">📍 Sheffield, England</div><div class="uni-tags"><span class="uni-tag">Engineering</span><span class="uni-tag">Architecture</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#17 — Non-Russell</div><div class="uni-name">Durham University</div><div class="uni-city">📍 Durham, England</div><div class="uni-tags"><span class="uni-tag">Business</span><span class="uni-tag">Physics</span><span class="uni-tag">Law</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#18 — Russell Group</div><div class="uni-name">Queen Mary University of London</div><div class="uni-city">📍 London, England</div><div class="uni-tags"><span class="uni-tag">Law</span><span class="uni-tag">Medicine</span><span class="uni-tag">Engineering</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#19 — Non-Russell</div><div class="uni-name">University of St Andrews</div><div class="uni-city">📍 St Andrews, Scotland</div><div class="uni-tags"><span class="uni-tag">Sciences</span><span class="uni-tag">International Relations</span></div></div>
+        <div class="uni-card"><div class="uni-rank">#20 — Non-Russell</div><div class="uni-name">University of Bath</div><div class="uni-city">📍 Bath, England</div><div class="uni-tags"><span class="uni-tag">Engineering</span><span class="uni-tag">Business</span><span class="uni-tag">Sciences</span></div></div>
+      </div>
+      <div class="info-box">This list is not a ranking. It reflects institutions mentioned in the admissions guide. Always verify entry requirements, accreditation, and programme availability on the official university website before advising a student.</div>
+    </div>
+  </section>
+</div>
+
+<section class="guide-cta">
+  <div class="c">
+    <h2>Ready to Apply to a UK University?</h2>
+    <p>Shreya Namankan provides free guidance to Indian students — from university shortlisting and applications to scholarships and visas.</p>
+    <a href="inquiry.html" class="btng">Get Free UK Counselling →</a>
+    <a href="universities-country.html?country=uk" class="btnw">← Back to UK Overview</a>
+  </div>
+</section>
+
+<footer>
+  <div class="c">
+    <p>&copy; 2025 <a href="index.html">Shreya Namankan</a>. Study Abroad Consultancy — Patna, India.</p>
+  </div>
+    <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
+      <a href="https://wa.me/918150035443" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">WhatsApp</a>
+      <a href="https://www.instagram.com/shreya_namankan" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Instagram</a>
+      <a href="https://www.linkedin.com/company/shreya-namankan/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61572047660426" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Facebook</a>
+    </div>
+</footer>
+
+<a href="https://wa.me/918150035443" target="_blank" rel="noopener noreferrer" class="wa" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+window.addEventListener('scroll',function(){
+  var pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('spb').style.width=Math.min(pct,100)+'%';
+},{passive:true});
+</script>
+</body>
+</html>

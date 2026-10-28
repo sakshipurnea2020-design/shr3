@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study in Asia & Other Destinations — Shreya Namankan</title>
+<meta name="description" content="A complete guide to studying in Japan, South Korea, Singapore, China, Hong Kong, Taiwan, Malaysia, Thailand and more — for Indian students.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#241819;--cream:#faf7f2;--gold:#e0b034;--gold-lt:#f0cc6a;--sky:#581825;--dark:#2a1015;--dark2:#1e0d10;--white:#fff;--gray:#6b5c5e;--gray-lt:#f5f0eb;--r:12px;--sh:0 4px 24px rgba(36,24,25,.12);--sh2:0 8px 48px rgba(36,24,25,.18);--tr:.25s ease;--fb:'Inter',sans-serif;--fh:'Playfair Display',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+#spb{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:9999;width:0%;transition:width .1s linear;pointer-events:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(36,24,25,.96);backdrop-filter:blur(12px);padding:0 clamp(1rem,4vw,2rem)}
+.nav-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--fh);font-size:1.3rem;font-weight:700;color:#fff}.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:.75rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.7);font-size:.85rem;transition:color var(--tr)}.nav-links a:hover{color:var(--gold)}
+.c{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.hero{background:linear-gradient(135deg,#1a2a4a,#581825);padding:9rem 2rem 4.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url('https://picsum.photos/seed/asiacity/1400/500') center/cover no-repeat;opacity:.15;z-index:0}
+.hero-content{position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(224,176,52,.15);border:1px solid rgba(224,176,52,.35);color:var(--gold-lt);font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.35rem .9rem;border-radius:50px;margin-bottom:1rem}
+.hero h1{color:#fff;font-size:clamp(1.9rem,4.5vw,3rem);margin-bottom:.75rem;line-height:1.15}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{color:rgba(255,255,255,.75);max-width:620px;margin:0 auto;font-size:.98rem}
+.hero-pills{display:flex;justify-content:center;gap:.65rem;flex-wrap:wrap;margin-top:1.5rem}
+.hero-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:rgba(255,255,255,.85);font-size:.79rem;font-weight:600;padding:.3rem .8rem;border-radius:50px}
+.toc-section{background:var(--white);padding:2.5rem 0;border-bottom:1px solid var(--gray-lt)}
+.toc-label{color:var(--gray);font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:1rem}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.6rem}
+.toc-item{display:flex;align-items:center;gap:.55rem;padding:.5rem .85rem;background:var(--cream);border-radius:8px;font-size:.83rem;font-weight:600;color:var(--sky);transition:var(--tr);border:1px solid transparent}
+.toc-item:hover{background:rgba(88,24,37,.07);border-color:rgba(88,24,37,.15)}
+.toc-num{background:var(--gold);color:var(--ink);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;flex-shrink:0}
+.guide-section{padding:clamp(2.5rem,5vw,4rem) 0}
+.guide-section:nth-child(even){background:var(--white)}
+.section-num{display:inline-flex;align-items:center;gap:.5rem;background:rgba(88,24,37,.08);color:var(--sky);font-size:.76rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:.28rem .85rem;border-radius:50px;margin-bottom:.75rem}
+.guide-section h2{font-family:var(--fh);font-size:clamp(1.35rem,3vw,1.85rem);color:var(--sky);margin-bottom:1rem}
+.guide-section h3{font-family:var(--fh);font-size:1.05rem;color:var(--ink);margin:1.5rem 0 .4rem}
+.guide-section p{color:var(--gray);font-size:.94rem;line-height:1.85;margin-bottom:1rem}
+.guide-section ul{margin:.5rem 0 1rem 0;padding:0;list-style:none}
+.guide-section ul li{display:flex;align-items:flex-start;gap:.65rem;padding:.35rem 0;font-size:.92rem;color:var(--gray)}
+.guide-section ul li::before{content:'✦';color:var(--gold);flex-shrink:0;font-size:.68rem;margin-top:.3rem}
+.info-box{background:rgba(224,176,52,.08);border:1px solid rgba(224,176,52,.25);border-left:4px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:1.1rem 1.4rem;margin:1.5rem 0;color:var(--gray);font-size:.88rem;line-height:1.72}
+.info-box strong{color:var(--sky)}
+.warn-box{background:rgba(220,38,38,.05);border:1px solid rgba(220,38,38,.18);border-left:4px solid #dc2626;border-radius:0 var(--r) var(--r) 0;padding:1.1rem 1.4rem;margin:1.5rem 0;color:var(--gray);font-size:.88rem;line-height:1.72}
+.warn-box strong{color:#dc2626}
+.guide-table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:var(--white);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+.guide-table th{background:linear-gradient(135deg,var(--sky),var(--dark2));color:#fff;padding:.85rem 1.1rem;text-align:left;font-size:.82rem;font-weight:700}
+.guide-table td{padding:.78rem 1.1rem;font-size:.88rem;color:var(--gray);border-bottom:1px solid rgba(36,24,25,.06)}
+.guide-table tr:last-child td{border-bottom:none}
+.guide-table tr:hover td{background:rgba(224,176,52,.04)}
+.country-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;margin:1.5rem 0}
+.country-card{background:var(--white);border-radius:var(--r);padding:1.4rem;box-shadow:var(--sh);border-left:4px solid var(--gold)}
+.country-card h3{color:var(--sky);font-family:var(--fb);font-weight:700;font-size:1rem;margin-bottom:.3rem}
+.country-tag{display:inline-block;background:rgba(88,24,37,.07);color:var(--sky);font-size:.74rem;font-weight:600;padding:.18rem .55rem;border-radius:50px;margin-bottom:.5rem}
+.country-card p{color:var(--gray);font-size:.85rem;line-height:1.7;margin-bottom:.5rem}
+.country-card .meta{font-size:.8rem;color:var(--gray)}
+.country-card .meta strong{color:var(--sky)}
+.ref-link{color:var(--sky);font-size:.81rem;font-weight:600;display:inline-flex;align-items:center;gap:.3rem;margin-top:.5rem;transition:color var(--tr)}
+.ref-link:hover{color:var(--gold);text-decoration:underline}
+.mistake-list{display:flex;flex-direction:column;gap:.75rem;margin:1.25rem 0}
+.mistake-item{display:flex;align-items:flex-start;gap:.85rem;background:var(--white);border-radius:var(--r);padding:1rem 1.2rem;box-shadow:var(--sh)}
+.mistake-x{background:#dc2626;color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0;margin-top:.15rem}
+.mistake-text{color:var(--gray);font-size:.88rem;line-height:1.65}
+.mistake-text strong{color:var(--sky)}
+.guide-cta{background:linear-gradient(135deg,var(--sky),var(--dark2));padding:clamp(3rem,6vw,5rem) 2rem;text-align:center}
+.guide-cta h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem}
+.guide-cta p{color:rgba(255,255,255,.72);max-width:560px;margin:0 auto 2rem;font-size:.95rem}
+.btng{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);padding:.8rem 1.75rem;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--tr)}.btng:hover{background:var(--gold-lt);transform:translateY(-2px)}
+.btnw{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:.8rem 1.75rem;border-radius:50px;font-weight:600;font-size:.9rem;transition:var(--tr);margin-left:.75rem}.btnw:hover{background:rgba(255,255,255,.2)}
+footer{background:var(--dark2);padding:1.4rem 0;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem}
+footer a{color:var(--gold)}
+.wa{position:fixed;bottom:28px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:transform var(--tr)}.wa:hover{transform:scale(1.1)}
+@media(max-width:600px){.toc-grid{grid-template-columns:1fr 1fr}.country-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">Shreya Namankan <span>✦</span></a>
+    <div class="nav-links">
+      <a href="universities.html">← All Destinations</a>
+      <a href="inquiry.html" style="background:var(--gold);color:var(--ink);padding:.4rem 1rem;border-radius:50px;font-weight:600">Free Counselling</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" style="padding:0;background:#fff;">
+  <div style="width:100%;overflow:hidden;margin-top:68px;">
+    <img src="others.jpeg" alt="Asia and Other Destinations" style="width:100%;height:auto;display:block;margin-top:-5%;margin-bottom:-8%;filter:none;">
+  </div>
+  <div style="background:#fff;padding:2rem clamp(1rem,4vw,2rem) 2.5rem;text-align:center;max-width:1100px;margin:0 auto;">
+    <div class="badge">🌏 Asia &amp; Other Destinations</div>
+    <h1 style="color:#581825;">Study in <em style="color:#e0b034;font-style:normal">Asia &amp; Beyond</em><br>A Guide for Indian Students</h1>
+    <p style="color:#6b5c5e;">Japan, South Korea, Singapore, China, Hong Kong, Taiwan, Malaysia, Thailand, Indonesia, Vietnam, Philippines and more.</p>
+    <div class="hero-pills" style="margin-top:1.5rem;">
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">Japan</span>
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">South Korea</span>
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">China</span>
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">Hong Kong</span>
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">Taiwan</span>
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">Malaysia</span>
+      <span class="hero-pill" style="background:rgba(88,24,37,.07);color:#581825;border:1px solid rgba(88,24,37,.15)">Thailand &amp; More</span>
+    </div>
+  </div>
+</section>
+
+<section class="toc-section">
+  <div class="c">
+    <p class="toc-label">Contents</p>
+    <div class="toc-grid">
+      <a href="#s1" class="toc-item"><span class="toc-num">1</span>South Korea</a>
+      <a href="#s2" class="toc-item"><span class="toc-num">2</span>China</a>
+      <a href="#s3" class="toc-item"><span class="toc-num">3</span>Hong Kong</a>
+      <a href="#s4" class="toc-item"><span class="toc-num">4</span>Taiwan</a>
+      <a href="#s5" class="toc-item"><span class="toc-num">5</span>Malaysia</a>
+      <a href="#s6" class="toc-item"><span class="toc-num">6</span>Thailand</a>
+      <a href="#s7" class="toc-item"><span class="toc-num">7</span>Indonesia</a>
+      <a href="#s8" class="toc-item"><span class="toc-num">8</span>Vietnam</a>
+      <a href="#s9" class="toc-item"><span class="toc-num">9</span>Philippines</a>
+      <a href="#s10" class="toc-item"><span class="toc-num">10</span>South Asia</a>
+      <a href="#s11" class="toc-item"><span class="toc-num">11</span>Scholarships</a>
+      <a href="#s12" class="toc-item"><span class="toc-num">12</span>Admission Requirements</a>
+      <a href="#s13" class="toc-item"><span class="toc-num">13</span>Visas &amp; Work Rights</a>
+      <a href="#s14" class="toc-item"><span class="toc-num">14</span>Employment After Graduation</a>
+      <a href="#s15" class="toc-item"><span class="toc-num">15</span>By Subject Area</a>
+      <a href="#s16" class="toc-item"><span class="toc-num">16</span>Common Mistakes</a>
+    </div>
+  </div>
+</section>
+
+<!-- SOUTH KOREA -->
+<section class="guide-section" id="s1">
+  <div class="c">
+    <div class="section-num">Section 1</div>
+    <h2>South Korea</h2>
+    <p><strong>Best suited to:</strong> Electronics, engineering, computer science, semiconductors, biotechnology, business, media and cultural industries.</p>
+    <p><strong>Language:</strong> English-taught degrees are available, particularly at postgraduate level. Korean is valuable for daily life, internships and many jobs.</p>
+    <p>South Korea has public and private universities with programmes in engineering, IT, electronics, semiconductors, AI, robotics, biotechnology, business, economics, media and the creative industries. It is particularly relevant to students interested in advanced manufacturing, telecommunications and technology research, as well as Korean language, film, music and cultural studies.</p>
+    <p>Applicants should check whether a programme is entirely taught in English or includes Korean-language modules. Some departments require Korean proficiency. Graduate research applicants should investigate the supervisor's research area and available funding.</p>
+    <h3>Tuition Fees and Living Expenses</h3>
+    <p>Fees vary by university, subject and degree level. Laboratory-intensive programmes and private institutions may differ from humanities programmes. The official Study in Korea portal estimates average monthly living expenses of approximately 750,000 to 1,000,000 Korean Won, including accommodation, food and transport. Actual costs can be higher in Seoul or when private accommodation is required.</p>
+    <h3>Scholarships</h3>
+    <p>The Global Korea Scholarship (GKS) is an important government route for eligible international students. University, foundation and corporate scholarships are also available. Not every scholarship covers all expenses — confirm coverage of tuition, living allowance, accommodation and insurance before accepting.</p>
+    <h3>Visa and Work Rights</h3>
+    <p>International students generally need a D-2 visa for degree study. Part-time work is regulated and may require immigration approval. Students must meet Korean-language, academic and eligibility requirements. Do not assume a student visa automatically permits employment.</p>
+    <h3>Employment After Graduation</h3>
+    <p>Korea has routes for eligible graduates to seek employment. Korean-language proficiency is particularly important for local employers. Students interested in research or international tech companies should still check whether roles require Korean.</p>
+    <a href="https://www.studyinkorea.go.kr/" target="_blank" rel="noopener noreferrer" class="ref-link">Official resource: Study in Korea</a>
+  </div>
+</section>
+
+<!-- CHINA -->
+<section class="guide-section" id="s2">
+  <div class="c">
+    <div class="section-num">Section 2</div>
+    <h2>China</h2>
+    <p><strong>Best suited to:</strong> Engineering, technology, manufacturing, business, medicine, Chinese studies, international trade and research.</p>
+    <p><strong>Language:</strong> Chinese is important for many programmes and jobs. English-taught degrees are available, but verify the language of instruction and professional requirements.</p>
+    <p>China has a large higher education system including comprehensive universities, specialist technology institutions, medical universities and research-intensive universities. It offers programmes in engineering, CS, AI, robotics, economics, finance, business, international trade, medicine and Chinese language and culture.</p>
+    <p>For medicine and other professional degrees, applicants must investigate recognition in the country where they intend to practise. Do not assume a qualification will automatically meet Indian professional registration requirements.</p>
+    <h3>Tuition Fees and Scholarships</h3>
+    <p>Fees vary by university, programme, city and language of instruction. Obtain a current fee schedule directly from the institution and budget for accommodation, insurance, travel, residence formalities and personal expenses.</p>
+    <p>The Chinese Government Scholarship programme supports eligible international students at participating institutions. Depending on the category, funding may include tuition, accommodation or allowance, medical insurance and a living allowance. Applications may be made through a Chinese diplomatic mission, an institution or another designated route.</p>
+    <div class="warn-box"><strong>Important:</strong> Admission and scholarship applications may involve separate procedures and timelines.</div>
+    <a href="https://www.campuschina.org/" target="_blank" rel="noopener noreferrer" class="ref-link">Official resource: China Scholarship Council (campuschina.org)</a>
+  </div>
+</section>
+
+<!-- HONG KONG -->
+<section class="guide-section" id="s3">
+  <div class="c">
+    <div class="section-num">Section 3</div>
+    <h2>Hong Kong</h2>
+    <p><strong>Best suited to:</strong> Finance, business, law, economics, computer science, engineering, public policy and research.</p>
+    <p><strong>Language:</strong> English is used in many university programmes. Cantonese is widely used in everyday life and in many local workplaces.</p>
+    <p>Hong Kong has internationally connected universities offering programmes in business, finance, law, economics, engineering, CS, social sciences and the humanities. Its position as a financial and professional services centre is relevant to students interested in banking, investment, consulting, trade, technology and research.</p>
+    <p>Accommodation can be a major cost — check whether university housing is available and how long it can be provided.</p>
+    <h3>Post-Study Arrangements</h3>
+    <p>The Immigration Arrangements for Non-local Graduates (IANG) can allow eligible graduates of qualifying Hong Kong programmes to stay for up to 24 months without first obtaining a job offer, subject to the applicable application conditions. This provides time to seek employment but does not guarantee a suitable job will be found.</p>
+    <div class="info-box"><strong>Note:</strong> Hong Kong has introduced relaxed employment restrictions for certain non-local students enrolled in eligible full-time locally accredited programmes. Confirm whether the current arrangements apply to your exact programme and status.</div>
+    <a href="https://www.studyinhongkong.edu.hk/" target="_blank" rel="noopener noreferrer" class="ref-link">Official resource: Study in Hong Kong</a>
+  </div>
+</section>
+
+<!-- TAIWAN -->
+<section class="guide-section" id="s4">
+  <div class="c">
+    <div class="section-num">Section 4</div>
+    <h2>Taiwan</h2>
+    <p><strong>Best suited to:</strong> Semiconductors, electronics, engineering, computer science, manufacturing, business and Chinese-language study.</p>
+    <p><strong>Language:</strong> English-taught programmes are available. Mandarin is useful for daily life and many employment opportunities.</p>
+    <p>Taiwan offers universities and specialist institutions with programmes in electronics, semiconductor technology, engineering, CS, management and business. It may be particularly attractive for students interested in semiconductor manufacturing and advanced technology research.</p>
+    <p>Confirm whether the entire degree is taught in English, whether Mandarin study is compulsory, and what language skills employers in your intended field expect.</p>
+    <h3>Scholarships</h3>
+    <p>The Taiwan Scholarship programme administered by the Ministry of Education can support eligible international students with tuition fees up to a specified amount per semester, alongside a monthly living allowance. Individual universities also offer scholarships. Submit required applications through the designated routes.</p>
+    <h3>Part-Time Work</h3>
+    <p>International students who wish to work part-time generally need a work permit. The Ministry of Education's guidance describes a usual limit of 20 hours per week during term time, with different provisions during holidays.</p>
+    <a href="https://taiwanscholarship.moe.gov.tw/" target="_blank" rel="noopener noreferrer" class="ref-link">Official resource: Taiwan Scholarship</a>
+    <a href="https://english.moe.gov.tw/" target="_blank" rel="noopener noreferrer" class="ref-link" style="margin-left:1rem">Ministry of Education, Taiwan</a>
+  </div>
+</section>
+
+<!-- MALAYSIA -->
+<section class="guide-section" id="s5">
+  <div class="c">
+    <div class="section-num">Section 5</div>
+    <h2>Malaysia</h2>
+    <p><strong>Best suited to:</strong> Business, computing, engineering, hospitality, finance, healthcare and international branch-campus programmes.</p>
+    <p><strong>Language:</strong> English is widely used in higher education, although language requirements differ by programme.</p>
+    <p>Malaysia has public universities, private universities, specialist institutions and international branch campuses offering programmes in business, computing, engineering, accounting, hospitality, health sciences and other fields. Some international branch campuses deliver degrees associated with universities headquartered in other countries. Applicants should verify the awarding institution, accreditation, campus facilities and professional recognition of the qualification.</p>
+    <h3>Tuition Fees and Living Costs</h3>
+    <p>Tuition fees vary by university, programme and degree level. Living costs depend on the city and accommodation. Kuala Lumpur may cost more than smaller cities, but total costs depend on the specific institution and housing arrangement.</p>
+    <h3>Student Pass and Part-Time Work</h3>
+    <p>International students generally need a Student Pass through the Education Malaysia Global Services (EMGS) process and the Malaysian Immigration Department. Students at eligible higher education institutions may work part-time for up to 20 hours per week during semester breaks or holidays longer than seven days, subject to approval and restrictions on permitted work sectors.</p>
+    <h3>Graduate Pass</h3>
+    <p>Malaysia has a Graduate Pass allowing eligible international graduates to remain for up to 12 months after graduation and work in permitted sectors, subject to conditions.</p>
+    <div class="warn-box"><strong>Important for Indian applicants:</strong> Education Malaysia's official guidance states that the extension of the Graduate Pass to Indian and Chinese nationals is valid until 31 December 2026, with approval considered case by case and an additional good-conduct document required. Verify the latest eligibility rules directly with Education Malaysia before applying.</div>
+    <a href="https://educationmalaysia.gov.my/" target="_blank" rel="noopener noreferrer" class="ref-link">Official resource: Education Malaysia</a>
+  </div>
+</section>
+
+<!-- THAILAND -->
+<section class="guide-section" id="s6">
+  <div class="c">
+    <div class="section-num">Section 6</div>
+    <h2>Thailand</h2>
+    <p><strong>Best suited to:</strong> Hospitality, tourism, business, international studies, public health and selected engineering and technology programmes.</p>
+    <p><strong>Language:</strong> Thai is widely used in everyday life. English-taught international programmes are available at selected institutions.</p>
+    <p>Thailand has public universities, private universities and international programmes in business, hospitality, tourism, engineering, health sciences and international relations. Check whether the programme is fully taught in English, whether internships are compulsory, and what language skills are expected in the workplace.</p>
+    <p>Tuition varies by institution and subject. International programmes may charge different fees from domestic-language programmes. Obtain a current written fee schedule and include accommodation, health insurance, visa expenses and travel in your budget.</p>
+    <div class="info-box"><strong>Visa and work:</strong> Permission to study should not be treated as unrestricted permission to work. Confirm the current rules for internships, paid employment and any required work authorisation.</div>
+    <a href="https://www.mhesi.go.th/" target="_blank" rel="noopener noreferrer" class="ref-link">Official resource: Ministry of Higher Education, Science, Research and Innovation</a>
+  </div>
+</section>
+
+<!-- INDONESIA -->
+<section class="guide-section" id="s7">
+  <div class="c">
+    <div class="section-num">Section 7</div>
+    <h2>Indonesia</h2>
+    <p><strong>Best suited to:</strong> Development studies, environmental studies, tropical biodiversity, marine science, business and Southeast Asian studies.</p>
+    <p><strong>Language:</strong> Indonesian is important for everyday life and many programmes. English-taught options exist at selected universities.</p>
+    <p>Indonesia offers public and private universities across a large and diverse country. Potential areas of study include environmental science, marine and tropical ecology, development, economics, business, public health and regional studies. Check the language of instruction, teaching facilities, degree recognition and availability of student support.</p>
+    <p>Tuition and living expenses vary by institution and city. International students need the appropriate study and residence authorisation. Work during study and employment after graduation are subject to Indonesian immigration and employment rules.</p>
+    <div class="info-box"><strong>Best for:</strong> Students pursuing a defined academic interest in Southeast Asia, biodiversity, development or marine environments. For other fields, compare the specific programme with alternatives elsewhere in Asia.</div>
+  </div>
+</section>
+
+<!-- VIETNAM -->
+<section class="guide-section" id="s8">
+  <div class="c">
+    <div class="section-num">Section 8</div>
+    <h2>Vietnam</h2>
+    <p><strong>Best suited to:</strong> Business, economics, international trade, development, technology and Southeast Asian studies.</p>
+    <p><strong>Language:</strong> Vietnamese is important for everyday life and many jobs. English-taught programmes are available at selected institutions.</p>
+    <p>Vietnam has universities offering programmes in business, economics, engineering, technology, public health and social sciences. Its economic development and regional trade links may be relevant to students interested in international business, manufacturing, development and Southeast Asian affairs.</p>
+    <p>Check the academic standing of the institution, language of instruction, curriculum and international recognition. Tuition varies by institution and programme. Confirm the applicable student visa or residence requirements and the rules governing employment during study.</p>
+    <div class="info-box"><strong>Note:</strong> Vietnam may be a useful destination for students with a clear regional or subject-specific interest. It should not be selected solely on the assumption that lower living costs will translate into stronger career opportunities.</div>
+  </div>
+</section>
+
+<!-- PHILIPPINES -->
+<section class="guide-section" id="s9">
+  <div class="c">
+    <div class="section-num">Section 9</div>
+    <h2>Philippines</h2>
+    <p><strong>Best suited to:</strong> Selected healthcare programmes, public health, business, marine studies and English-language education.</p>
+    <p><strong>Language:</strong> English is used in higher education at many institutions, alongside Filipino and other local languages.</p>
+    <p>The Philippines has public and private universities offering programmes in business, healthcare, engineering, social sciences and other fields. English-language teaching can make it accessible to international students, although requirements differ by programme.</p>
+    <div class="warn-box"><strong>Healthcare degrees:</strong> Students considering medicine, nursing or other healthcare degrees must be particularly careful about accreditation, clinical training, licensing and professional recognition in the country where they intend to practise. Confirm requirements with the relevant professional regulator in India or the intended destination before applying.</div>
+    <p>Tuition and living costs differ substantially across institutions. Verify the quality of facilities, practical training, student support and qualification recognition. Visa, work and post-study conditions should be checked with the relevant authorities.</p>
+  </div>
+</section>
+
+<!-- SOUTH ASIA -->
+<section class="guide-section" id="s10">
+  <div class="c">
+    <div class="section-num">Section 10</div>
+    <h2>South Asian Destinations</h2>
+    <p>South Asia includes Bangladesh, Nepal, Sri Lanka, Bhutan, Maldives and Afghanistan. For Indian students looking to study abroad within the region, options exist, but the academic and professional suitability of each destination varies considerably.</p>
+    <p>Students should compare the specific programme, institutional recognition, academic standards, costs and professional opportunities rather than assuming that geographical proximity makes a degree automatically suitable.</p>
+  </div>
+</section>
+
+<!-- SCHOLARSHIPS -->
+<section class="guide-section" id="s11">
+  <div class="c">
+    <div class="section-num">Section 11</div>
+    <h2>Scholarships for Studying in Asia</h2>
+    <p>Funding can make a major difference to the affordability of an Asian degree. However, scholarship eligibility and coverage vary widely.</p>
+    <h3>Government Scholarships</h3>
+    <ul>
+      <li><strong>Japan:</strong> MEXT scholarships and other eligible support schemes</li>
+      <li><strong>South Korea:</strong> Global Korea Scholarship and university-based awards</li>
+      <li><strong>China:</strong> Chinese Government Scholarship programmes at participating institutions</li>
+      <li><strong>Taiwan:</strong> Taiwan Scholarship and university scholarships</li>
+      <li><strong>Singapore:</strong> Selected university scholarships with specific eligibility conditions</li>
+      <li><strong>Malaysia:</strong> University scholarships and selected government or institutional awards</li>
+    </ul>
+    <h3>What to Check Before Accepting a Scholarship</h3>
+    <p>Read the award conditions carefully and confirm whether it covers:</p>
+    <ul>
+      <li>Full or partial tuition fees</li>
+      <li>Accommodation and monthly living allowance</li>
+      <li>Travel to and from the host country</li>
+      <li>Health insurance and books or equipment</li>
+      <li>Duration of funding and whether it covers the full programme</li>
+    </ul>
+    <div class="warn-box"><strong>Important:</strong> A scholarship that covers tuition alone may still leave a significant funding gap. Also check minimum grades needed to retain the award, restrictions on changing programmes, and whether a service commitment applies after graduation.</div>
+  </div>
+</section>
+
+<!-- ADMISSION REQUIREMENTS -->
+<section class="guide-section" id="s12">
+  <div class="c">
+    <div class="section-num">Section 12</div>
+    <h2>Admission Requirements for Indian Students</h2>
+    <p>Admission depends on the country, institution, subject and degree level. The following is a general guide only.</p>
+    <h3>Undergraduate Admission</h3>
+    <p>Applicants usually need school-leaving qualifications, academic transcripts and any required subject prerequisites. Some universities require entrance examinations, interviews, language tests or additional qualifications. Check whether the university accepts your particular Indian school board qualifications for direct entry.</p>
+    <h3>Master's Admission</h3>
+    <p>Applicants generally need a recognised bachelor's degree in a relevant discipline. Common documents include academic transcripts, degree certificates, language-test results, a CV, a statement of purpose and academic references.</p>
+    <h3>Doctoral Admission</h3>
+    <p>PhD applicants often need a relevant master's degree, a research proposal, academic references and evidence of research experience. Some programmes require identifying a supervisor before applying. Check whether the PhD is funded, whether tuition is waived, and what stipend and teaching obligations apply.</p>
+  </div>
+</section>
+
+<!-- VISAS AND WORK -->
+<section class="guide-section" id="s13">
+  <div class="c">
+    <div class="section-num">Section 13</div>
+    <h2>Student Visas and Work Rights</h2>
+    <p>Student immigration procedures differ by country. Common requirements may include:</p>
+    <ul>
+      <li>An admission letter from an eligible institution</li>
+      <li>A valid passport and academic records</li>
+      <li>Proof of financial resources</li>
+      <li>Health insurance or medical documents where required</li>
+      <li>Visa application forms, fees and language evidence</li>
+    </ul>
+    <div class="warn-box"><strong>Work rights vary:</strong> A student visa does not automatically provide unrestricted employment rights. Work limits, permit requirements and permitted employment types differ across Asian countries. Internships may also be subject to specific conditions. Do not depend on part-time work to meet full tuition and living expenses.</div>
+  </div>
+</section>
+
+<!-- EMPLOYMENT AFTER GRADUATION -->
+<section class="guide-section" id="s14">
+  <div class="c">
+    <div class="section-num">Section 14</div>
+    <h2>Employment Opportunities After Graduation</h2>
+    <p>Post-study opportunities differ widely across Asia. Before choosing a university, students should investigate:</p>
+    <ul>
+      <li><strong>Industry demand:</strong> Research current opportunities in your exact field, not just general claims about a country's economy</li>
+      <li><strong>Language requirements:</strong> Japanese, Korean, Mandarin, Malay, Thai, Vietnamese and other languages may be important for local employment</li>
+      <li><strong>Work authorisation:</strong> A degree does not automatically give a graduate the right to work. Check current graduate and work-permit rules</li>
+      <li><strong>Professional recognition:</strong> Medicine, dentistry, nursing, law and other regulated professions can require separate licensing or examinations</li>
+      <li><strong>Internships and experience:</strong> Check whether the course includes placements, employer partnerships or research opportunities</li>
+      <li><strong>Employer recruitment:</strong> Look at actual job requirements and whether employers recruit international graduates for the roles you want</li>
+    </ul>
+    <div class="info-box"><strong>Key distinction:</strong> A country that offers a post-study application route is not the same as a country where you have a realistic chance of obtaining suitable employment. Research both separately.</div>
+  </div>
+</section>
+
+<!-- BY SUBJECT AREA -->
+<section class="guide-section" id="s15">
+  <div class="c">
+    <div class="section-num">Section 15</div>
+    <h2>Choosing the Right Destination by Subject</h2>
+    <table class="guide-table">
+      <thead><tr><th>Subject Area</th><th>Destinations Worth Investigating</th></tr></thead>
+      <tbody>
+        <tr><td>Engineering, Robotics &amp; Manufacturing</td><td>Japan, South Korea, Singapore, China, Taiwan, Malaysia</td></tr>
+        <tr><td>CS, AI &amp; Data Science</td><td>Singapore, South Korea, Japan, China, Taiwan, Malaysia</td></tr>
+        <tr><td>Semiconductors &amp; Electronics</td><td>Taiwan, South Korea, Japan, Singapore, China</td></tr>
+        <tr><td>Business &amp; Finance</td><td>Singapore, Hong Kong, Japan, South Korea, Malaysia</td></tr>
+        <tr><td>Medicine &amp; Healthcare</td><td>China, Philippines, Bangladesh, Nepal — recognition must be checked with Indian regulators</td></tr>
+        <tr><td>Hospitality &amp; Tourism</td><td>Thailand, Malaysia, Singapore, Philippines</td></tr>
+        <tr><td>Environmental &amp; Marine Sciences</td><td>Japan, Taiwan, Indonesia, Malaysia</td></tr>
+        <tr><td>International Relations &amp; Asian Studies</td><td>Japan, South Korea, China, Singapore, Taiwan</td></tr>
+        <tr><td>PhD &amp; Research</td><td>Based on supervisor fit, funding, facilities and research group quality</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- COMMON MISTAKES -->
+<section class="guide-section" id="s16">
+  <div class="c">
+    <div class="section-num">Section 16</div>
+    <h2>Common Mistakes to Avoid</h2>
+    <div class="mistake-list">
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Assuming English-taught study means English-only life:</strong> Local-language ability is often important for work and daily life.</div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Choosing a country solely because it is inexpensive:</strong> The quality, recognition and relevance of the degree matter.</div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Assuming scholarships are guaranteed:</strong> Government and university awards are competitive and may cover only part of the cost.</div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Relying on part-time work to finance the degree:</strong> Work permissions may be restricted, and jobs may not be readily available.</div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Ignoring professional recognition:</strong> Especially important for medicine, dentistry, nursing, law and other regulated careers.</div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Assuming a degree guarantees a job:</strong> Employment depends on skills, language, demand, employer requirements and immigration rules.</div></div>
+      <div class="mistake-item"><div class="mistake-x">✕</div><div class="mistake-text"><strong>Trusting recruitment claims without verification:</strong> Confirm admissions, fees, scholarships and recognition directly with the institution and relevant authorities.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="guide-cta">
+  <div class="c">
+    <h2>Interested in Japan, South Korea or Another Asian Destination?</h2>
+    <p>Shreya Namankan provides free guidance to Indian students — from university shortlisting and applications to scholarships and visas.</p>
+    <a href="inquiry.html" class="btng">Get Free Counselling →</a>
+    <a href="universities.html" class="btnw">← Browse All Destinations</a>
+  </div>
+</section>
+
+<footer>
+  <div class="c">
+    <p>&copy; 2025 <a href="index.html">Shreya Namankan</a>. Study Abroad Consultancy — Patna, India.</p>
+  </div>
+    <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
+      <a href="https://wa.me/918150035443" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">WhatsApp</a>
+      <a href="https://www.instagram.com/shreya_namankan" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Instagram</a>
+      <a href="https://www.linkedin.com/company/shreya-namankan/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61572047660426" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Facebook</a>
+    </div>
+</footer>
+
+<a href="https://wa.me/918150035443" target="_blank" rel="noopener noreferrer" class="wa" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+window.addEventListener('scroll',function(){
+  var pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('spb').style.width=Math.min(pct,100)+'%';
+},{passive:true});
+</script>
+</body>
+</html>

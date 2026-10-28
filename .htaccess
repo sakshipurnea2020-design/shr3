@@ -1,0 +1,28 @@
+# Shreya Namankan — Apache configuration
+Options -Indexes
+
+# Protect config and sensitive files from direct HTTP access
+<Files "config.php">
+  Order allow,deny
+  Deny from all
+</Files>
+
+# Force HTTPS (uncomment when SSL is configured)
+# RewriteEngine On
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Cache static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/png  "access plus 1 month"
+  ExpiresByType text/css   "access plus 1 week"
+  ExpiresByType text/javascript "access plus 1 week"
+</IfModule>
+
+# Enable gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/json
+</IfModule>

@@ -1,0 +1,595 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universities — Shreya Namankan</title>
+<meta name="description" content="Top universities and admissions guide for Indian students — Shreya Namankan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#241819;--cream:#faf7f2;--gold:#e0b034;--gold-lt:#f0cc6a;--sky:#581825;--dark:#2a1015;--dark2:#1e0d10;--white:#fff;--gray:#6b5c5e;--gray-lt:#f5f0eb;--r:12px;--sh:0 4px 24px rgba(36,24,25,.12);--sh2:0 8px 48px rgba(36,24,25,.18);--tr:.25s ease;--fb:'Inter',sans-serif;--fh:'Playfair Display',serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+#spb{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:9999;width:0%;transition:width .1s linear;pointer-events:none}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(36,24,25,.96);backdrop-filter:blur(12px);padding:0 clamp(1rem,4vw,2rem)}
+.nav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;gap:1rem;flex-wrap:wrap}
+.logo{font-family:var(--fh);font-size:1.3rem;font-weight:700;color:#fff}.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:.75rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.7);font-size:.85rem;transition:color var(--tr)}.nav-links a:hover{color:var(--gold)}
+.hero{padding:9rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero-flag{width:100%;height:300px;object-fit:cover;position:absolute;top:0;left:0;z-index:0;filter:brightness(.4)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(36,24,25,.6) 0%,rgba(88,24,37,.7) 100%);z-index:1}
+.hero-content{position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(224,176,52,.15);border:1px solid rgba(224,176,52,.35);color:var(--gold-lt);font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.35rem .9rem;border-radius:50px;margin-bottom:1rem}
+.hero h1{color:#fff;font-size:clamp(2rem,5vw,3.2rem);margin-bottom:.75rem;line-height:1.15}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero-meta{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem}
+.meta-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.85);font-size:.82rem;font-weight:600;padding:.35rem .85rem;border-radius:50px}
+.c{max-width:1100px;margin:0 auto;padding:0 clamp(1rem,4vw,2rem)}
+.sp{padding:clamp(3rem,6vw,5rem) 0}
+/* INFO CARDS */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;margin-bottom:2.5rem}
+.info-card{background:var(--white);border-radius:var(--r);padding:1.6rem;box-shadow:var(--sh);border-left:4px solid var(--gold)}
+.info-card h3{color:var(--sky);font-family:var(--fb);font-weight:700;font-size:.9rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.5rem}
+.info-card p{color:var(--gray);font-size:.9rem;line-height:1.7}
+/* DISCLAIMER */
+.disclaimer{background:rgba(224,176,52,.08);border:1px solid rgba(224,176,52,.3);border-radius:var(--r);padding:1.1rem 1.4rem;color:var(--gray);font-size:.82rem;line-height:1.65;margin-bottom:2.5rem}
+.disclaimer strong{color:var(--sky)}
+/* UNI TABLE */
+.uni-table-wrap{display:none!important}
+.uni-table-header{background:linear-gradient(135deg,var(--sky),var(--dark2));padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.uni-table-header h2{color:#fff;font-size:1.2rem}
+.uni-count{background:var(--gold);color:var(--ink);font-size:.8rem;font-weight:800;padding:.25rem .75rem;border-radius:50px}
+.uni-search{padding:.55rem 1rem;border:1.5px solid rgba(255,255,255,.2);border-radius:50px;background:rgba(255,255,255,.1);color:#fff;font-family:var(--fb);font-size:.88rem;outline:none;min-width:200px}
+.uni-search::placeholder{color:rgba(255,255,255,.5)}
+.uni-search:focus{border-color:var(--gold);background:rgba(255,255,255,.15)}
+table{width:100%;border-collapse:collapse}
+thead th{background:rgba(88,24,37,.05);padding:.85rem 1.25rem;text-align:left;font-size:.8rem;font-weight:700;color:var(--sky);text-transform:uppercase;letter-spacing:.5px;border-bottom:2px solid rgba(88,24,37,.1)}
+tbody tr{border-bottom:1px solid rgba(36,24,25,.06);transition:background var(--tr)}
+tbody tr:hover{background:rgba(224,176,52,.06)}
+tbody tr.hidden{display:none}
+tbody td{padding:.85rem 1.25rem;font-size:.9rem;color:var(--gray);vertical-align:top}
+tbody td:first-child{color:var(--sky);font-weight:700;font-size:.85rem;width:52px}
+tbody td:nth-child(2){color:var(--ink);font-weight:600}
+tbody td:last-child{font-size:.8rem;font-style:italic;color:var(--gray)}
+/* CHANGE COUNTRY */
+.change-bar{background:var(--dark2);padding:2rem 0;text-align:center}
+.change-bar p{color:rgba(255,255,255,.65);margin-bottom:1rem;font-size:.95rem}
+.change-select{padding:.7rem 1.1rem;border:1.5px solid rgba(224,176,52,.35);border-radius:50px;background:rgba(255,255,255,.07);color:#fff;font-family:var(--fb);font-size:.9rem;outline:none;cursor:pointer;margin-right:.5rem}
+.change-btn{background:var(--gold);color:var(--ink);border:none;border-radius:50px;padding:.7rem 1.5rem;font-size:.9rem;font-weight:700;cursor:pointer;font-family:var(--fb);transition:var(--tr)}
+.change-btn:hover{background:var(--gold-lt)}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--sky),var(--dark2));padding:clamp(3rem,6vw,5rem) 2rem;text-align:center}
+.cta-section h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.72);max-width:560px;margin:0 auto 2rem;font-size:.95rem}
+.btng{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);padding:.8rem 1.75rem;border-radius:50px;font-weight:700;font-size:.95rem;transition:var(--tr)}.btng:hover{background:var(--gold-lt);transform:translateY(-2px)}
+.btnw{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);padding:.8rem 1.75rem;border-radius:50px;font-weight:600;font-size:.9rem;transition:var(--tr);margin-left:.75rem}.btnw:hover{background:rgba(255,255,255,.2)}
+footer{background:var(--dark2);padding:1.4rem 0;text-align:center;color:rgba(255,255,255,.4);font-size:.8rem;border-top:1px solid rgba(255,255,255,.06)}
+footer a{color:var(--gold)}
+.wa{position:fixed;bottom:28px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:transform var(--tr)}.wa:hover{transform:scale(1.1)}
+@media(max-width:600px){table{font-size:.82rem}tbody td{padding:.65rem .75rem}thead th{padding:.65rem .75rem}.uni-table-header{flex-direction:column;align-items:flex-start}.uni-search{min-width:100%;margin-top:.5rem}}
+</style>
+</head>
+<body>
+<div id="spb"></div>
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">Shreya Namankan <span>✦</span></a>
+    <div class="nav-links">
+      <a href="universities.html">← All Countries</a>
+      <a href="inquiry.html" style="background:var(--gold);color:var(--ink);padding:.4rem 1rem;border-radius:50px;font-weight:600">Free Counselling</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Dynamic hero + content injected by JS -->
+<div id="page-content">
+  <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;background:var(--cream)">
+    <p style="color:var(--gray);font-size:1.1rem">Loading…</p>
+  </div>
+</div>
+
+<a href="https://wa.me/918150035443" target="_blank" rel="noopener noreferrer" class="wa" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+window.addEventListener('scroll',function(){
+  var pct=(window.scrollY/(document.documentElement.scrollHeight-window.innerHeight))*100;
+  document.getElementById('spb').style.width=Math.min(pct,100)+'%';
+},{passive:true});
+
+// ── COUNTRY DATA ────────────────────────────────────────────────────
+var COUNTRIES = {
+  'usa': {
+    name:'USA', flag:'us', emoji:'🇺🇸', photo:'newyork',
+    localPhoto:'usa.jpeg', cropTop:'5%', cropBottom:'9%',
+    courses:'Computer Science, AI/Data Science, Engineering, Business/MBA, Finance',
+    bach:'70–90%+; selective courses often need 85–95%+ and specific subjects.',
+    mast:'Often about 3.0/4.0 equivalent; roughly 7–8.5/10 as a broad guide.',
+    exams:'IELTS/TOEFL/PTE/DET if accepted; SAT/ACT for some bachelor\'s; GRE/GMAT only where required.',
+    guide:'usa-guide.html',
+    guideTitle:'A Complete Guide to Choosing the Right University in the USA',
+    uniSubtitle:'From MIT and Stanford to Georgia Tech and UIUC — America\'s most prestigious institutions.',
+    featuredUnis:[
+      {n:'Massachusetts Institute of Technology',c:'Cambridge, MA',t:['Engineering','CS & AI','Global #1']},
+      {n:'Stanford University',c:'Stanford, CA',t:['Tech & Business','AI & CS','Entrepreneurship']},
+      {n:'Harvard University',c:'Cambridge, MA',t:['Business','Law','Medicine','Research']},
+      {n:'California Institute of Technology',c:'Pasadena, CA',t:['Science','Engineering','Research']},
+      {n:'Princeton University',c:'Princeton, NJ',t:['Research','Economics','Engineering']},
+      {n:'Yale University',c:'New Haven, CT',t:['Law','Medicine','Arts & Humanities']},
+      {n:'University of Chicago',c:'Chicago, IL',t:['Economics','Business','Social Sciences']},
+      {n:'University of Pennsylvania',c:'Philadelphia, PA',t:['Business (Wharton)','Medicine','Law']},
+      {n:'Cornell University',c:'Ithaca, NY',t:['Engineering','Business','CS']},
+      {n:'Columbia University',c:'New York City, NY',t:['Business','Law','Journalism']},
+      {n:'University of California, Berkeley',c:'Berkeley, CA',t:['CS & Engineering','Research','Business']},
+      {n:'University of California, Los Angeles',c:'Los Angeles, CA',t:['Engineering','Business','Film & Arts']},
+      {n:'University of Michigan–Ann Arbor',c:'Ann Arbor, MI',t:['Engineering','Business','Medicine']},
+      {n:'Carnegie Mellon University',c:'Pittsburgh, PA',t:['CS & AI','Robotics','Business']},
+      {n:'New York University',c:'New York City, NY',t:['Business (Stern)','Law','Arts']},
+      {n:'University of Texas at Austin',c:'Austin, TX',t:['Engineering','Business','CS']},
+      {n:'University of Washington',c:'Seattle, WA',t:['CS & AI','Medicine','Engineering']},
+      {n:'Purdue University',c:'West Lafayette, IN',t:['Engineering','CS','Agriculture']},
+      {n:'Georgia Institute of Technology',c:'Atlanta, GA',t:['Engineering','CS & AI','Robotics']},
+      {n:'University of Illinois Urbana-Champaign',c:'Urbana-Champaign, IL',t:['CS & Engineering','Business','Research']}
+    ],
+    unis:['Massachusetts Institute of Technology','Stanford University','Harvard University','California Institute of Technology','Princeton University','Yale University','University of Chicago','University of Pennsylvania','Cornell University','Columbia University','University of California, Berkeley','University of California, Los Angeles','University of Michigan–Ann Arbor','Carnegie Mellon University','New York University','University of Texas at Austin','University of Washington','Purdue University','Georgia Institute of Technology','University of Illinois Urbana-Champaign']
+  },
+  'uk': {
+    name:'United Kingdom', flag:'gb', emoji:'🇬🇧', photo:'london',
+    localPhoto:'uk.jpeg', cropTop:'12%', cropBottom:'15%',
+    courses:'Business, Finance, Law, Computer Science, Data Analytics, Engineering',
+    bach:'Often 60–90% depending on board, course and university; selective courses can require 85–95%+ or strong subject marks.',
+    mast:'Commonly 55–70% or institution-specific CGPA equivalent; competitive programmes may expect more.',
+    guide:'uk-guide.html',
+    guideTitle:'A Complete Guide to Choosing the Right University in the UK',
+    uniSubtitle:'From Oxford and Cambridge to Bath and St Andrews — the UK\'s most prestigious institutions.',
+    featuredUnis:[
+      {n:'University of Oxford',c:'Oxford',t:['Highly Competitive','Global Top 5','Research']},
+      {n:'University of Cambridge',c:'Cambridge',t:['Highly Competitive','Global Top 5','Research']},
+      {n:'Imperial College London',c:'London',t:['STEM Specialist','Engineering','Medicine']},
+      {n:'UCL',c:'London',t:['Research-Intensive','Multidisciplinary']},
+      {n:'University of Edinburgh',c:'Edinburgh',t:['Finance & Tech','Research-Intensive']},
+      {n:'King\'s College London',c:'London',t:['Law & Medicine','Social Sciences']},
+      {n:'London School of Economics',c:'London',t:['Economics','Finance','Law']},
+      {n:'University of Manchester',c:'Manchester',t:['Business','Engineering','CS']},
+      {n:'University of Bristol',c:'Bristol',t:['Engineering','Law','Sciences']},
+      {n:'University of Warwick',c:'Coventry',t:['Business','Economics','CS']},
+      {n:'University of Glasgow',c:'Glasgow',t:['Medicine','Engineering','Law']},
+      {n:'University of Birmingham',c:'Birmingham',t:['Business','Engineering']},
+      {n:'University of Southampton',c:'Southampton',t:['Engineering','Research']},
+      {n:'University of Leeds',c:'Leeds',t:['Business','Fashion','Engineering']},
+      {n:'University of Nottingham',c:'Nottingham',t:['Pharmacy','Business']},
+      {n:'University of Sheffield',c:'Sheffield',t:['Engineering','Architecture']},
+      {n:'Durham University',c:'Durham',t:['Business','Physics','Law']},
+      {n:'Queen Mary University of London',c:'London',t:['Law','Medicine']},
+      {n:'University of St Andrews',c:'St Andrews',t:['Sciences','Int\'l Relations']},
+      {n:'University of Bath',c:'Bath',t:['Engineering','Business']}
+    ],
+    exams:'IELTS/TOEFL/PTE or accepted alternative; UCAS for many UG applications; GRE/GMAT only for selected courses.',
+    unis:['University of Oxford','University of Cambridge','Imperial College London','UCL','University of Edinburgh','King\'s College London','London School of Economics and Political Science','University of Manchester','University of Bristol','University of Warwick','University of Glasgow','University of Birmingham','University of Southampton','University of Leeds','University of Nottingham','University of Sheffield','Durham University','Queen Mary University of London','University of St Andrews','University of Bath']
+  },
+  'canada': {
+    name:'Canada', flag:'ca', emoji:'🇨🇦', photo:'toronto',
+    localPhoto:'canada.jpeg', cropTop:'13%', cropBottom:'5%',
+    courses:'Computer Science, AI, Engineering, Business, Data Science, Health Sciences',
+    bach:'Often 75–90%; competitive CS, engineering and health programmes may expect 85–95%+.',
+    mast:'Often a B average / around 3.0/4.0 equivalent; competitive programmes may expect 3.3+/4.0.',
+    exams:'IELTS/TOEFL/PTE/DET if accepted; SAT/ACT varies; GRE/GMAT for selected graduate programmes.',
+    guide:'canada-guide.html',
+    guideTitle:'Study in Canada: A Complete Guide for International Students',
+    uniSubtitle:'From University of Toronto and McGill to UBC and Waterloo — Canada\'s top institutions.',
+    featuredUnis:[
+      {n:'University of Toronto',c:'Toronto, Ontario',t:['CS & AI','Business','Medicine','Research']},
+      {n:'University of British Columbia',c:'Vancouver, BC',t:['Engineering','Sciences','Business']},
+      {n:'McGill University',c:'Montreal, Quebec',t:['Medicine','Law','Engineering','Research']},
+      {n:'University of Alberta',c:'Edmonton, Alberta',t:['Engineering','CS','Sciences']},
+      {n:'University of Waterloo',c:'Waterloo, Ontario',t:['CS & AI','Engineering','Co-op']},
+      {n:'Université de Montréal',c:'Montreal, Quebec',t:['Medicine','Sciences','Research']},
+      {n:'McMaster University',c:'Hamilton, Ontario',t:['Medicine','Engineering','Business']},
+      {n:'University of Ottawa',c:'Ottawa, Ontario',t:['Law','Social Sciences','Bilingual']},
+      {n:'Queen\'s University',c:'Kingston, Ontario',t:['Business','Engineering','Sciences']},
+      {n:'Western University',c:'London, Ontario',t:['Business (Ivey)','Medicine','Law']},
+      {n:'University of Calgary',c:'Calgary, Alberta',t:['Engineering','Business','Medicine']},
+      {n:'Simon Fraser University',c:'Burnaby, BC',t:['CS','Business','Social Sciences']},
+      {n:'University of Victoria',c:'Victoria, BC',t:['Engineering','CS','Sciences']},
+      {n:'Dalhousie University',c:'Halifax, Nova Scotia',t:['Medicine','Engineering','Law']},
+      {n:'York University',c:'Toronto, Ontario',t:['Business','Law','Social Sciences']},
+      {n:'University of Saskatchewan',c:'Saskatoon, Saskatchewan',t:['Agriculture','Engineering','Medicine']},
+      {n:'University of Manitoba',c:'Winnipeg, Manitoba',t:['Engineering','Sciences','Medicine']},
+      {n:'Concordia University',c:'Montreal, Quebec',t:['Business','Fine Arts','Engineering']},
+      {n:'Carleton University',c:'Ottawa, Ontario',t:['Engineering','CS','Public Affairs']},
+      {n:'Toronto Metropolitan University',c:'Toronto, Ontario',t:['Business','Engineering','Journalism']}
+    ],
+    unis:['University of Toronto','University of British Columbia','McGill University','University of Alberta','University of Waterloo','Université de Montréal','McMaster University','University of Ottawa','Queen\'s University','Western University','University of Calgary','Simon Fraser University','University of Victoria','Dalhousie University','York University','University of Saskatchewan','University of Manitoba','Concordia University','Carleton University','Toronto Metropolitan University']
+  },
+  'australia': {
+    name:'Australia', flag:'au', emoji:'🇦🇺', photo:'sydney',
+    localPhoto:'australia.jpeg', cropTop:'10%', cropBottom:'8%',
+    courses:'IT, Engineering, Nursing, Accounting, Business, Mining, Environmental Science',
+    bach:'Often around 65–85%+; selective courses require higher marks and prerequisite subjects.',
+    mast:'Often a relevant bachelor\'s degree with roughly 60–70% or equivalent; course-specific rules apply.',
+    exams:'IELTS/TOEFL/PTE or accepted alternative; GRE/GMAT only for selected courses.',
+    guide:'australia-guide.html',
+    guideTitle:'Study in Australia: A Complete Guide for Indian Students',
+    uniSubtitle:'From the Go8 research universities to RMIT and Curtin — Australia\'s most recognised institutions.',
+    featuredUnis:[
+      {n:'University of Melbourne',c:'Melbourne, Victoria',t:['Go8','Research-Intensive','Engineering']},
+      {n:'Australian National University',c:'Canberra, ACT',t:['Go8','Research','Public Policy']},
+      {n:'University of Sydney',c:'Sydney, NSW',t:['Go8','Business','Law','Medicine']},
+      {n:'UNSW Sydney',c:'Sydney, NSW',t:['Go8','CS & Engineering','Business']},
+      {n:'Monash University',c:'Melbourne, Victoria',t:['Go8','Medicine','Engineering','Business']},
+      {n:'University of Queensland',c:'Brisbane, QLD',t:['Go8','Life Sciences','Engineering']},
+      {n:'University of Western Australia',c:'Perth, WA',t:['Go8','Research','Engineering']},
+      {n:'University of Adelaide',c:'Adelaide, SA',t:['Go8','Engineering','Sciences']},
+      {n:'University of Technology Sydney',c:'Sydney, NSW',t:['IT','Design','Business']},
+      {n:'RMIT University',c:'Melbourne, Victoria',t:['Engineering','Design','Business']},
+      {n:'Macquarie University',c:'Sydney, NSW',t:['Business','Sciences','Law']},
+      {n:'Queensland University of Technology',c:'Brisbane, QLD',t:['IT','Engineering','Business']},
+      {n:'Deakin University',c:'Geelong, Victoria',t:['Business','Health','IT']},
+      {n:'Curtin University',c:'Perth, WA',t:['Engineering','Mining','Business']},
+      {n:'University of Wollongong',c:'Wollongong, NSW',t:['Engineering','IT','Business']},
+      {n:'Griffith University',c:'Brisbane, QLD',t:['Law','Health','Business']},
+      {n:'La Trobe University',c:'Melbourne, Victoria',t:['Health Sciences','Business','Research']},
+      {n:'Swinburne University of Technology',c:'Melbourne, Victoria',t:['IT','Engineering','Design']},
+      {n:'Flinders University',c:'Adelaide, SA',t:['Medicine','Engineering','Social Sciences']},
+      {n:'University of Newcastle',c:'Newcastle, NSW',t:['Engineering','Medicine','Business']}
+    ],
+    unis:['University of Melbourne','Australian National University','University of Sydney','UNSW Sydney','Monash University','University of Queensland','University of Western Australia','University of Adelaide','University of Technology Sydney','RMIT University','Macquarie University','Queensland University of Technology','Deakin University','Curtin University','University of Wollongong','Griffith University','La Trobe University','Swinburne University of Technology','Flinders University','University of Newcastle']
+  },
+  'germany': {
+    name:'Germany', flag:'de', emoji:'🇩🇪', photo:'berlin',
+    courses:'Mechanical/Automotive Engineering, Robotics, AI, Computer Science, Renewable Energy',
+    bach:'No single cutoff: school credential recognition, subjects and eligibility route matter; foundation/Studienkolleg or prior university study may be needed.',
+    mast:'Relevant bachelor\'s degree and required subject credits; grades are programme-specific.',
+    exams:'English programmes: IELTS/TOEFL if required. German programmes: TestDaF/DSH/telc/Goethe as specified. Check APS requirements for Indian applicants.',
+    unis:['Technical University of Munich','Ludwig Maximilian University of Munich','Heidelberg University','RWTH Aachen University','Humboldt University of Berlin','Free University of Berlin','Karlsruhe Institute of Technology','University of Bonn','University of Freiburg','University of Göttingen','University of Hamburg','TU Berlin','University of Stuttgart','University of Tübingen','FAU Erlangen–Nürnberg','University of Münster','University of Würzburg','TU Dresden','University of Mannheim','University of Cologne']
+  },
+  'ireland': {
+    name:'Ireland', flag:'ie', emoji:'🇮🇪', photo:'dublin',
+    courses:'Computer Science, Pharmaceutical Science, Cybersecurity, Finance, Business Analytics',
+    bach:'Often 70–90% depending on programme; selective courses may require higher grades.',
+    mast:'Relevant honours bachelor\'s degree; often equivalent to a UK 2:1/2:2 depending on course.',
+    exams:'IELTS/TOEFL/PTE or accepted alternative; GRE/GMAT for selected programmes.',
+    unis:['Trinity College Dublin','University College Dublin','University of Galway','University College Cork','Dublin City University','University of Limerick','Maynooth University','Technological University Dublin','Munster Technological University','Atlantic Technological University','South East Technological University','Technological University of the Shannon','RCSI University of Medicine and Health Sciences','National College of Ireland','Dublin Business School','Griffith College','Mary Immaculate College','Dundalk Institute of Technology','CCT College Dublin','Institute of Art, Design and Technology']
+  },
+  'new-zealand': {
+    name:'New Zealand', flag:'nz', emoji:'🇳🇿', photo:'auckland',
+    localPhoto:'new zealand.jpeg', cropTop:'13%', cropBottom:'5%',
+    courses:'IT, Engineering, Agriculture, Business, Environmental Science, Food Science',
+    bach:'Often 65–85% as a planning range; professional and selective programmes can require higher marks.',
+    mast:'Relevant bachelor\'s degree, commonly around a B average or equivalent.',
+    exams:'IELTS/TOEFL/PTE or accepted alternative; GRE/GMAT only for selected programmes.',
+    guide:'new-zealand-guide.html',
+    guideTitle:'Study in New Zealand: A Complete Guide for Indian Students',
+    uniSubtitle:'All 8 public universities — from University of Auckland to Lincoln University.',
+    featuredUnis:[
+      {n:'University of Auckland',c:'Auckland',t:['Business','Engineering','Medicine','Research']},
+      {n:'University of Otago',c:'Dunedin',t:['Health Sciences','Biomedical','Humanities']},
+      {n:'Victoria University of Wellington',c:'Wellington',t:['Law','Public Policy','Research']},
+      {n:'University of Canterbury',c:'Christchurch',t:['Engineering','Science','Business']},
+      {n:'Massey University',c:'Palmerston North / Auckland',t:['Agriculture','Business','Creative Arts']},
+      {n:'University of Waikato',c:'Hamilton',t:['Business','Computing','Education']},
+      {n:'Lincoln University',c:'Christchurch',t:['Agriculture','Food Systems','Environment']},
+      {n:'Auckland University of Technology (AUT)',c:'Auckland',t:['Technology','Business','Health']},
+      {n:'Unitec Institute of Technology',c:'Auckland',t:['Engineering','Business','Computing']},
+      {n:'Manukau Institute of Technology',c:'Auckland',t:['Business','Health','Creative Arts']},
+      {n:'Otago Polytechnic',c:'Dunedin',t:['Applied Sciences','Design','Nursing']},
+      {n:'Wellington Institute of Technology',c:'Wellington',t:['Engineering','IT','Business']},
+      {n:'Ara Institute of Canterbury',c:'Christchurch',t:['Engineering','Health','Creative Industries']},
+      {n:'Waikato Institute of Technology',c:'Hamilton',t:['Business','IT','Engineering']},
+      {n:'Southern Institute of Technology',c:'Invercargill',t:['Business','IT','Health']},
+      {n:'Eastern Institute of Technology',c:'Napier',t:['Business','Computing','Agriculture']},
+      {n:'Nelson Marlborough Institute of Technology',c:'Nelson',t:['Nursing','Engineering','Business']},
+      {n:'Toi Ohomai Institute of Technology',c:'Rotorua / Tauranga',t:['Business','IT','Trades']},
+      {n:'NorthTec',c:'Whangarei',t:['Business','Health','Computing']},
+      {n:'UCOL',c:'Palmerston North',t:['Business','Engineering','Health']}
+    ],
+    unis:['University of Auckland','University of Otago','Victoria University of Wellington','University of Canterbury','University of Waikato','Massey University','Lincoln University','Auckland University of Technology','Unitec Institute of Technology','Manukau Institute of Technology','Otago Polytechnic','Wellington Institute of Technology','Ara Institute of Canterbury','Waikato Institute of Technology','Southern Institute of Technology','Eastern Institute of Technology','Nelson Marlborough Institute of Technology','Toi Ohomai Institute of Technology','NorthTec','UCOL']
+  },
+  'france': {
+    name:'France', flag:'fr', emoji:'🇫🇷', photo:'paris',
+    courses:'Management, Luxury Brand Management, Finance, Engineering, Fashion, Data Science',
+    bach:'Often 70–90% for selective options; recognition, language and course prerequisites matter.',
+    mast:'Relevant bachelor\'s degree; selective business schools may require strong grades, tests and interviews.',
+    exams:'English: IELTS/TOEFL/PTE. French: DELF/DALF/TCF/TEF. GMAT/GRE/TAGE MAGE for selected schools.',
+    unis:['Université PSL','Institut Polytechnique de Paris','Sorbonne University','Université Paris-Saclay','École Normale Supérieure de Lyon','Université Grenoble Alpes','Aix-Marseille Université','Université de Strasbourg','Université de Bordeaux','Université de Montpellier','Université Claude Bernard Lyon 1','Université Paris Cité','Sciences Po','HEC Paris','ESSEC Business School','ESCP Business School','EDHEC Business School','emlyon business school','CentraleSupélec','INSA Lyon']
+  },
+  'italy': {
+    name:'Italy', flag:'it', emoji:'🇮🇹', photo:'rome',
+    courses:'Architecture, Automotive Engineering, Fashion, Design, Economics, Food Science',
+    bach:'Often 65–85% as a rough planning range; recognition, prerequisites and entrance tests vary by course.',
+    mast:'Relevant bachelor\'s degree with required subject credits; grade conversion and minimums vary.',
+    exams:'English: IELTS/TOEFL/PTE. Italian: CILS/CELI/PLIDA. SAT/TOLC or programme-specific exams.',
+    unis:['University of Bologna','Sapienza University of Rome','University of Padua','University of Milan','Politecnico di Milano','Politecnico di Torino','University of Pisa','University of Florence','University of Trento','University of Turin','University of Naples Federico II','University of Pavia','University of Siena','University of Rome Tor Vergata','University of Milano-Bicocca','University of Genoa','University of Verona','Ca\' Foscari University of Venice','University of Parma','University of Ferrara']
+  },
+  'netherlands': {
+    name:'Netherlands', flag:'nl', emoji:'🇳🇱', photo:'amsterdam',
+    courses:'AI, Computer Science, Logistics, Business Analytics, Economics, Engineering',
+    bach:'Often 75–90% as a rough guide; Indian Class XII may not always meet direct research-university entry.',
+    mast:'Relevant bachelor\'s degree equivalent to a Dutch research-university degree; many programmes expect a strong academic record.',
+    exams:'IELTS/TOEFL/PTE/Cambridge as accepted; GMAT/GRE for selected business/economics courses.',
+    unis:['Delft University of Technology','University of Amsterdam','Utrecht University','Leiden University','Eindhoven University of Technology','Wageningen University & Research','Erasmus University Rotterdam','University of Groningen','Maastricht University','University of Twente','Vrije Universiteit Amsterdam','Radboud University','Tilburg University','Utrecht University of Applied Sciences','Amsterdam University of Applied Sciences','HAN University of Applied Sciences','Fontys University of Applied Sciences','The Hague University of Applied Sciences','Saxion University of Applied Sciences','Avans University of Applied Sciences']
+  },
+  'sweden': {
+    name:'Sweden', flag:'se', emoji:'🇸🇪', photo:'stockholm',
+    courses:'Software Engineering, AI, Renewable Energy, Industrial Design, Telecommunications',
+    bach:'No universal percentage cutoff; recognised upper-secondary qualifications, subjects and selection determine eligibility.',
+    mast:'Relevant bachelor\'s degree and required subject credits; selection can use grades, thesis, portfolio or experience.',
+    exams:'IELTS/TOEFL/PTE/Cambridge as accepted; Swedish proof for Swedish-taught programmes.',
+    unis:['Lund University','Uppsala University','KTH Royal Institute of Technology','Stockholm University','University of Gothenburg','Chalmers University of Technology','Linköping University','Umeå University','Swedish University of Agricultural Sciences','Luleå University of Technology','Örebro University','Karlstad University','Linnaeus University','Malmö University','Mid Sweden University','Jönköping University','University of Borås','Dalarna University','Halmstad University','Kristianstad University']
+  },
+  'switzerland': {
+    name:'Switzerland', flag:'ch', emoji:'🇨🇭', photo:'zurich',
+    courses:'Robotics, Finance, Hospitality, Engineering, Biotechnology',
+    bach:'Credential recognition and language requirements are key; a percentage alone cannot guarantee entry.',
+    mast:'Relevant bachelor\'s degree with strong grades; selective technical/business courses can be highly competitive.',
+    exams:'IELTS/TOEFL for English courses; German/French/Italian proof for local-language courses.',
+    unis:['ETH Zurich','EPFL','University of Zurich','University of Geneva','University of Basel','University of Bern','University of Lausanne','University of St. Gallen','University of Fribourg','University of Neuchâtel','Università della Svizzera italiana','University of Lucerne','Zurich University of Applied Sciences','Bern University of Applied Sciences','FHNW University of Applied Sciences','Lucerne University of Applied Sciences and Arts','HES-SO','SUPSI','EHL Hospitality Business School','Glion Institute of Higher Education']
+  },
+  'singapore': {
+    name:'Singapore', flag:'sg', emoji:'🇸🇬', photo:'singapore',
+    localPhoto:'singapore.jpeg', cropTop:'7%', cropBottom:'9%',
+    courses:'Computer Science, Finance, Business Analytics, Engineering, Supply Chain',
+    bach:'Competitive universities often expect 85–95%+ for popular courses; qualification board and subject rules matter.',
+    mast:'Strong bachelor\'s grades; competitive programmes often expect around 7.5–9/10 equivalent.',
+    exams:'IELTS/TOEFL where required; SAT/ACT for some UG routes; GRE/GMAT for selected postgraduate programmes.',
+    guide:'singapore-guide.html',
+    guideTitle:'Study in Singapore: A Complete Guide for Indian Students',
+    uniSubtitle:'From NUS and NTU to SMU and SUTD — Singapore\'s most prestigious institutions.',
+    featuredUnis:[
+      {n:'National University of Singapore (NUS)',c:'Kent Ridge, Singapore',t:['CS & AI','Engineering','Business','Medicine']},
+      {n:'Nanyang Technological University (NTU)',c:'Jurong West, Singapore',t:['Engineering','Business','Sciences','Research']},
+      {n:'Singapore Management University (SMU)',c:'City Campus, Singapore',t:['Business','Accounting','Law','Economics']},
+      {n:'Singapore University of Technology and Design (SUTD)',c:'Changi, Singapore',t:['Technology','Design','Engineering','Innovation']},
+      {n:'Singapore Institute of Technology (SIT)',c:'Multiple campuses',t:['Applied Learning','Industry-Linked','Engineering']},
+      {n:'Singapore University of Social Sciences (SUSS)',c:'Clementi, Singapore',t:['Business','Social Sciences','Education']},
+      {n:'INSEAD Asia Campus',c:'One-North, Singapore',t:['MBA','Executive Education','Global Business']},
+      {n:'James Cook University Singapore',c:'Sims Drive, Singapore',t:['Business','IT','Psychology']},
+      {n:'ESSEC Business School Asia-Pacific',c:'One-North, Singapore',t:['Business','Luxury Management','Finance']},
+      {n:'Duke-NUS Medical School',c:'Outram, Singapore',t:['Medicine','Biomedical Research','Graduate Medical']},
+      {n:'Lee Kuan Yew School of Public Policy',c:'Kent Ridge, Singapore',t:['Public Policy','Governance','International Affairs']},
+      {n:'LASALLE College of the Arts',c:'McNally Street, Singapore',t:['Fine Arts','Design','Performing Arts']},
+      {n:'Nanyang Academy of Fine Arts (NAFA)',c:'Bencoolen Street, Singapore',t:['Fine Arts','Design','Music']},
+      {n:'Curtin Singapore',c:'One-North, Singapore',t:['Business','IT','Engineering']},
+      {n:'SIM Global Education',c:'Clementi Road, Singapore',t:['Business','Mass Communication','IT']},
+      {n:'PSB Academy',c:'Marina Square, Singapore',t:['Business','Engineering','Mass Communication']},
+      {n:'Kaplan Singapore',c:'Wilkie Edge, Singapore',t:['Business','Law','IT']},
+      {n:'DigiPen Institute of Technology Singapore',c:'One-North, Singapore',t:['Game Design','CS','Digital Arts']},
+      {n:'TUM Asia',c:'One-North, Singapore',t:['Engineering','Industrial Chemistry','Aerospace']},
+      {n:'National Institute of Education (NIE)',c:'Jurong West, Singapore',t:['Education','Teacher Training','Research']}
+    ],
+    unis:['National University of Singapore','Nanyang Technological University','Singapore Management University','Singapore University of Technology and Design','Singapore Institute of Technology','Singapore University of Social Sciences','James Cook University Singapore','INSEAD Asia Campus','ESSEC Business School Asia-Pacific','LASALLE College of the Arts','Nanyang Academy of Fine Arts','SIM Global Education','PSB Academy','Kaplan Singapore','Curtin Singapore','Management Development Institute of Singapore','Amity Global Institute Singapore','DigiPen Institute of Technology Singapore','TUM Asia','National Institute of Education']
+  },
+  'japan': {
+    name:'Japan', flag:'jp', emoji:'🇯🇵', photo:'tokyo',
+    courses:'Robotics, Automotive Engineering, AI, Computer Science, Materials Science',
+    bach:'Varies by route; school records, entrance screening and language matter. Japanese-taught programmes often require additional exams.',
+    mast:'Relevant bachelor\'s degree; research proposal, supervisor match, entrance exam and interview can be important.',
+    exams:'Japanese UG routes may use EJU/university exams and JLPT; English programmes: IELTS/TOEFL.',
+    unis:['The University of Tokyo','Kyoto University','Osaka University','Tohoku University','Institute of Science Tokyo','Nagoya University','Hokkaido University','Kyushu University','Waseda University','Keio University','University of Tsukuba','Kobe University','Hiroshima University','Tokyo University of Science','Hitotsubashi University','Chiba University','Yokohama National University','Sophia University','Ritsumeikan University','International Christian University']
+  },
+  'south-korea': {
+    name:'South Korea', flag:'kr', emoji:'🇰🇷', photo:'seoul',
+    courses:'Semiconductor Engineering, AI, Electronics, Biotechnology, Computer Science',
+    bach:'Strong school results and subject prerequisites matter; selective universities can be highly competitive.',
+    mast:'Relevant bachelor\'s degree and strong academic record; research programmes may require supervisor contact.',
+    exams:'English courses: IELTS/TOEFL if required. Korean-taught: TOPIK, often level specified by course.',
+    unis:['Seoul National University','KAIST','Yonsei University','Korea University','POSTECH','Sungkyunkwan University','Hanyang University','UNIST','GIST','Kyung Hee University','Ewha Womans University','Sogang University','Pusan National University','Chung-Ang University','Inha University','Ajou University','Kyungpook National University','Sejong University','University of Seoul','Dongguk University']
+  },
+  'spain': {
+    name:'Spain', flag:'es', emoji:'🇪🇸', photo:'barcelona',
+    courses:'Business, Architecture, Tourism, Finance, Computer Science, Renewable Energy',
+    bach:'Often 65–85% as a planning range; recognition, regional rules, subject prerequisites and entrance processes may apply.',
+    mast:'Relevant bachelor\'s degree; grade conversion and subject credits are programme-specific.',
+    exams:'Spanish courses: DELE/SIELE. English courses: IELTS/TOEFL. Some UG routes use UNEDasiss/PCE.',
+    unis:['University of Barcelona','Autonomous University of Barcelona','Complutense University of Madrid','Autonomous University of Madrid','University of Navarra','Pompeu Fabra University','Carlos III University of Madrid','Polytechnic University of Catalonia','Polytechnic University of Madrid','University of Granada','University of Valencia','University of Seville','University of Salamanca','University of Zaragoza','University of Alicante','University of the Basque Country','IE University','ESADE Business School','Universitat Ramon Llull','University of Murcia']
+  },
+  'finland': {
+    name:'Finland', flag:'fi', emoji:'🇫🇮', photo:'helsinki',
+    courses:'Computer Science, Telecommunications, Engineering, Sustainability, Education, Game Design',
+    bach:'No single Class XII cutoff; programmes may use entrance exams, SAT/ACT or certificate-based selection.',
+    mast:'Relevant bachelor\'s degree with required subject background; selection may include grades, exam, portfolio or interview.',
+    exams:'IELTS/TOEFL/PTE/Cambridge as accepted; SAT/ACT or entrance exam for some bachelor\'s programmes.',
+    unis:['University of Helsinki','Aalto University','University of Turku','University of Oulu','Tampere University','University of Jyväskylä','LUT University','Åbo Akademi University','University of Eastern Finland','University of Vaasa','Hanken School of Economics','Metropolia University of Applied Sciences','Tampere University of Applied Sciences','Turku University of Applied Sciences','Haaga-Helia University of Applied Sciences','LAB University of Applied Sciences','Laurea University of Applied Sciences','Oulu University of Applied Sciences','Arcada University of Applied Sciences','Savonia University of Applied Sciences']
+  },
+  'denmark': {
+    name:'Denmark', flag:'dk', emoji:'🇩🇰', photo:'copenhagen',
+    courses:'Engineering, Biotechnology, IT, Renewable Energy, Business, Design',
+    bach:'No universal cutoff; equivalence to Danish upper-secondary qualifications and subject prerequisites determine eligibility.',
+    mast:'Relevant bachelor\'s degree with specified subject credits; minimum grade averages vary by course.',
+    exams:'IELTS/TOEFL/Cambridge as accepted; Danish proof for Danish-taught programmes.',
+    unis:['University of Copenhagen','Aarhus University','Technical University of Denmark','University of Southern Denmark','Aalborg University','Copenhagen Business School','Roskilde University','IT University of Copenhagen','VIA University College','University College Copenhagen','Royal Danish Academy','Aarhus School of Architecture','Design School Kolding','Danish School of Media and Journalism','UCL University College','University College Absalon','University College Lillebælt','University College of Northern Denmark','Business Academy Aarhus','IBA International Business Academy']
+  },
+  'austria': {
+    name:'Austria', flag:'at', emoji:'🇦🇹', photo:'vienna',
+    courses:'Mechanical Engineering, Computer Science, Economics, Architecture, Environmental Science',
+    bach:'Credential recognition, subject prerequisites and language matter; some courses use entrance examinations.',
+    mast:'Relevant bachelor\'s degree with required credits; course-specific grades, language proof and aptitude tests may apply.',
+    exams:'German-taught: accepted German proof, often B2/C1 as specified. English-taught: IELTS/TOEFL or equivalent.',
+    unis:['University of Vienna','TU Wien','University of Innsbruck','Graz University of Technology','University of Graz','Johannes Kepler University Linz','University of Salzburg','BOKU University','Vienna University of Economics and Business','Medical University of Vienna','Medical University of Graz','Medical University of Innsbruck','University of Klagenfurt','Montanuniversität Leoben','University of Applied Arts Vienna','University of Music and Performing Arts Vienna','FH Joanneum','IMC Krems University of Applied Sciences','MCI | The Entrepreneurial School','University of Applied Sciences Upper Austria']
+  },
+  'belgium': {
+    name:'Belgium', flag:'be', emoji:'🇧🇪', photo:'brussels',
+    courses:'Engineering, Biotechnology, Economics, Business, International Relations, Logistics',
+    bach:'Requirements depend on language community, credential recognition and programme.',
+    mast:'Relevant bachelor\'s degree with required subject credits; bridging/pre-master programmes may be required.',
+    exams:'English: IELTS/TOEFL/Cambridge. Dutch/French/German proof for local-language courses. GMAT/GRE for selected business programmes.',
+    unis:['KU Leuven','Ghent University','UCLouvain','Université libre de Bruxelles','Vrije Universiteit Brussel','University of Antwerp','University of Liège','Hasselt University','University of Mons','University of Namur','Saint-Louis University Brussels','Antwerp Management School','Vlerick Business School','Solvay Brussels School of Economics and Management','Thomas More University of Applied Sciences','Howest University of Applied Sciences','Artevelde University of Applied Sciences','Erasmushogeschool Brussel','Odisee University of Applied Sciences','AP University of Applied Sciences and Arts Antwerp']
+  },
+  'europe': {
+    name:'Europe (Full Guide)', flag:'eu', emoji:'🇪🇺', photo:'europe',
+    _redirect:'europe-guide.html'
+  }
+};
+
+// ── RENDER ───────────────────────────────────────────────────────────
+function getParam(name){
+  var p=new URLSearchParams(window.location.search);
+  return p.get(name)||'';
+}
+
+function render(){
+  var key=getParam('country').toLowerCase();
+  var d=COUNTRIES[key];
+  if(!d){
+    document.getElementById('page-content').innerHTML='<div style="padding:8rem 2rem;text-align:center"><h2 style="color:var(--sky);font-family:var(--fh)">Country not found</h2><p style="color:var(--gray);margin-top:.75rem">Please go back and select a valid country.</p><br><a href="universities.html" style="color:var(--gold);font-weight:600">← Back to Universities</a></div>';
+    return;
+  }
+
+  document.title = d.name + ' Universities — Shreya Namankan';
+
+  var tableRows = d.unis.map(function(uni, i){
+    return '<tr><td>'+(i+1)+'</td><td>'+uni+'</td><td>Check official course page before advising.</td></tr>';
+  }).join('');
+
+  var countryOptions = Object.keys(COUNTRIES).map(function(k){
+    return '<option value="'+k+'"'+(k===key?' selected':'')+'>'+COUNTRIES[k].emoji+' '+COUNTRIES[k].name+'</option>';
+  }).join('');
+
+  var html = `
+    ${d.localPhoto ? `
+    <div style="width:100%;margin-top:68px;background:#fff;">
+    <div style="width:100%;overflow:hidden;">
+      <img src="${d.localPhoto}" alt="${d.name}" style="width:100%;height:auto;display:block;margin-top:-${d.cropTop||'12%'};margin-bottom:-${d.cropBottom||'15%'};filter:none;">
+    </div>
+      <div style="background:#fff;padding:2rem clamp(1rem,4vw,2rem) 2.5rem;text-align:center;max-width:1100px;margin:0 auto;">
+        <div class="badge">${d.emoji} Study Destination</div>
+        <h1 style="color:var(--sky);font-size:clamp(1.8rem,4vw,2.8rem);margin:.5rem 0 1rem;line-height:1.2">Universities in <em style="color:var(--gold);font-style:normal">${d.name}</em></h1>
+        <div class="hero-meta" style="justify-content:center">
+          <span class="meta-pill" style="background:rgba(88,24,37,.08);color:var(--sky);border:1px solid rgba(88,24,37,.15)">🎓 20 Top Institutions</span>
+          <span class="meta-pill" style="background:rgba(88,24,37,.08);color:var(--sky);border:1px solid rgba(88,24,37,.15)">📚 Bachelor's & Master's</span>
+          <span class="meta-pill" style="background:rgba(88,24,37,.08);color:var(--sky);border:1px solid rgba(88,24,37,.15)">🆓 Zero Consultancy Fee</span>
+        </div>
+      </div>
+    </div>
+    ` : `
+    <section class="hero">
+      <img src="https://picsum.photos/seed/${d.photo}/1200/400" alt="${d.name}" class="hero-flag" loading="eager">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="badge">${d.emoji} Study Destination</div>
+        <h1>Universities in <em>${d.name}</em></h1>
+        <div class="hero-meta">
+          <span class="meta-pill">🎓 20 Top Institutions</span>
+          <span class="meta-pill">📚 Bachelor's & Master's</span>
+          <span class="meta-pill">🆓 Zero Consultancy Fee</span>
+        </div>
+      </div>
+    </section>
+    `}
+
+    <section class="sp" style="background:var(--white)">
+      <div class="c">
+        <div class="disclaimer">
+          <strong>Important planning note:</strong> The information below is a broad counselling starting guide — not guaranteed minimums. Admission rules depend on course, intake, board/credential, subjects, grades, language score and other requirements. Always verify the official programme page before advising a student.
+        </div>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>🎯 Popular Course Areas</h3>
+            <p>${d.courses}</p>
+          </div>
+          <div class="info-card">
+            <h3>🎓 Bachelor's Planning Range</h3>
+            <p>${d.bach}</p>
+          </div>
+          <div class="info-card">
+            <h3>📊 Master's Planning Range</h3>
+            <p>${d.mast}</p>
+          </div>
+          <div class="info-card">
+            <h3>📝 Exams / Language Requirements</h3>
+            <p>${d.exams}</p>
+          </div>
+        </div>
+
+
+        ${d.guide ? `
+        <div style="margin-top:2.5rem;background:linear-gradient(135deg,#581825,#1e0d10);border-radius:16px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap">
+          <div>
+            <div style="color:#f0cc6a;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem">📖 Complete Guide</div>
+            <h3 style="color:#fff;font-family:'Playfair Display',serif;font-size:1.25rem;margin-bottom:.35rem">${d.guideTitle || 'A Complete Guide to Choosing the Right University in ' + d.name}</h3>
+            <p style="color:rgba(255,255,255,.65);font-size:.88rem;margin:0">11 sections · Academic requirements · Living costs · Scholarships · Visas · Top 20 universities</p>
+          </div>
+          <a href="${d.guide}" style="background:#e0b034;color:#241819;padding:.8rem 1.75rem;border-radius:50px;font-weight:700;font-size:.95rem;white-space:nowrap;flex-shrink:0;display:inline-block">Read Full ${d.name} Guide →</a>
+        </div>
+
+        ${d.featuredUnis ? `
+        <div style="margin-top:3rem">
+          <div style="text-align:center;margin-bottom:1.75rem">
+            <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(224,176,52,.1);border:1px solid rgba(224,176,52,.3);color:#e0b034;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.28rem .85rem;border-radius:50px;margin-bottom:.75rem">${d.emoji} Top Universities</div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,1.9rem);color:#581825;margin-bottom:.4rem">Top 20 ${d.name} Universities for Indian Students</h2>
+            <p style="color:#6b5c5e;font-size:.9rem">${d.uniSubtitle || 'The most prestigious institutions for Indian students.'}</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem">
+            ${d.featuredUnis.map(function(u,i){
+              return '<div style="background:#fff;border-radius:12px;padding:1.25rem;box-shadow:0 4px 24px rgba(36,24,25,.1);border-left:4px solid #e0b034;transition:.25s ease" onmouseover="this.style.transform=\'translateY(-4px)\';this.style.boxShadow=\'0 8px 32px rgba(36,24,25,.18)\'" onmouseout="this.style.transform=\'\';this.style.boxShadow=\'0 4px 24px rgba(36,24,25,.1)\'">'
+                +'<div style="font-size:.7rem;font-weight:800;color:#e0b034;letter-spacing:.5px;text-transform:uppercase;margin-bottom:.3rem">#'+(i+1)+'</div>'
+                +'<div style="font-family:\'Playfair Display\',serif;font-size:.98rem;color:#581825;margin-bottom:.2rem;font-weight:700">'+u.n+'</div>'
+                +'<div style="font-size:.75rem;color:#6b5c5e;margin-bottom:.6rem">📍 '+u.c+'</div>'
+                +'<div style="display:flex;flex-wrap:wrap;gap:.3rem">'+u.t.map(function(tag){return '<span style="background:rgba(88,24,37,.07);color:#581825;font-size:.7rem;font-weight:600;padding:.15rem .5rem;border-radius:50px">'+tag+'</span>';}).join('')+'</div>'
+                +'</div>';
+            }).join('')}
+          </div>
+          <p style="color:#6b5c5e;font-size:.78rem;margin-top:1rem;text-align:center">This list is not a ranking. Verify entry requirements, accreditation, and programme availability on the official university website before applying.</p>
+        </div>
+        ` : ''}
+        ` : ''}
+      </div>
+    </section>
+
+    <div class="change-bar">
+      <p>Explore another destination:</p>
+      <select class="change-select" id="change-select">${countryOptions}</select>
+      <button class="change-btn" onclick="changeCountry()">Go →</button>
+    </div>
+
+    <section class="cta-section">
+      <div class="c">
+        <h2>Ready to Apply? Get Expert Guidance — Free.</h2>
+        <p>Shreya Namankan helps Indian students shortlist universities, prepare applications, and navigate the entire study abroad process — at zero cost.</p>
+        <a href="inquiry.html" class="btng">Fill the Counselling Form →</a>
+        <a href="universities.html" class="btnw">← Browse All Countries</a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="c">
+        <p>&copy; 2025 <a href="index.html">Shreya Namankan</a>. Study Abroad Consultancy — Patna, India.</p>
+      </div>
+        <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center">
+      <a href="https://wa.me/918150035443" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">WhatsApp</a>
+      <a href="https://www.instagram.com/shreya_namankan" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Instagram</a>
+      <a href="https://www.linkedin.com/company/shreya-namankan/" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">LinkedIn</a>
+      <a href="https://www.facebook.com/profile.php?id=61572047660426" target="_blank" rel="noopener" style="color:rgba(255,255,255,.5);font-size:.8rem;text-decoration:none;border:1px solid rgba(255,255,255,.15);padding:.25rem .7rem;border-radius:50px;transition:color .2s" onmouseover="this.style.color='#e0b034'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Facebook</a>
+    </div>
+</footer>
+  `;
+
+  document.getElementById('page-content').innerHTML = html;
+}
+
+function filterUnis(q){
+  var rows=document.querySelectorAll('#uni-tbody tr');
+  rows.forEach(function(row){
+    var text=row.textContent.toLowerCase();
+    row.classList.toggle('hidden',q&&!text.includes(q.toLowerCase()));
+  });
+}
+
+function changeCountry(){
+  var val=document.getElementById('change-select').value;
+  if(!val) return;
+  var d=COUNTRIES[val];
+  if(d&&d._redirect){window.location.href=d._redirect;return;}
+  window.location.href='universities-country.html?country='+val;
+}
+
+render();
+</script>
+</body>
+</html>
